@@ -1,15 +1,12 @@
 {
-  "name": "Punganur Heritage V5",
-  "short_name": "Punganur V5",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#f4f7f3",
-  "theme_color": "#285943",
-  "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    }
-  ]
+  "name":"Punganur Heritage Cattle Manager v5",
+  "short_name":"Punganur Heritage",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"portrait",
+  "background_color":"#f5f7f2",
+  "theme_color":"#24563a",
+  "description":"Advanced offline Punganur cattle breeding, pedigree, lactation and health manager",
+  "icons":[]
 }
