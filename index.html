@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#174f36"><link rel="manifest" href="manifest.json"><title>Punganur Heritage V11</title>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#174f36"><link rel="manifest" href="manifest.json"><title>Punganur Heritage V11.1</title>
 <style>
 :root{--g:#174f36;--bg:#f4f7f2;--line:#dce5dd;--muted:#69756d}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#17231b;font:15px system-ui}header{background:linear-gradient(135deg,#123b2a,#2e7a55);color:#fff;padding:18px;position:sticky;top:0;z-index:5}h1{margin:0;font-size:21px}main{max-width:900px;margin:auto;padding:14px 14px 85px}.screen{display:none}.screen.on{display:block}.hero{background:linear-gradient(135deg,#174f36,#4e8b65);color:#fff;padding:20px;border-radius:20px;margin-bottom:12px}.hero h2{margin:0 0 5px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.card,.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;margin-bottom:10px;box-shadow:0 3px 14px #173b2710}.stat{background:#edf5ef}.stat b{font-size:25px;color:var(--g);display:block}.stat small{color:var(--muted)}button{border:0;border-radius:11px;padding:10px 13px;font-weight:800}.primary{background:var(--g);color:#fff}.secondary{background:#e8f1ea;color:var(--g)}.danger{background:#fff0ef;color:#b43d35}input,select,textarea{width:100%;padding:11px;border:1px solid #cfd9d1;border-radius:10px;background:#fff;font:inherit}textarea{min-height:70px}label{display:block;font-size:11px;color:var(--muted);font-weight:800;margin:5px 0}.animal{display:flex;gap:11px;align-items:center}.photo{width:60px;height:60px;border-radius:14px;object-fit:cover;background:#e8efe9;display:grid;place-items:center;font-size:28px;flex:none}.grow{flex:1}.muted{font-size:12px;color:var(--muted)}.pill{display:inline-block;background:#e8f1ea;color:var(--g);padding:4px 8px;border-radius:99px;font-size:10px;font-weight:800;margin:2px}.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);z-index:9}.nav{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr)}.nav button{background:#fff;color:#68746c;font-size:10px}.nav button.on{color:var(--g);background:#edf5ef}.nav span{display:block;font-size:20px}.close{float:right;background:#edf2ee;border-radius:50%}dialog{border:0;border-radius:20px;width:min(800px,94vw);max-height:90vh}dialog::backdrop{background:#0008}.tree{display:flex;flex-direction:column;align-items:center;gap:8px}.node{background:#e9f2eb;border:1px solid #cdded1;border-radius:12px;padding:10px 14px;text-align:center;min-width:145px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;position:relative}.pair:before{content:"";position:absolute;top:50%;left:25%;right:25%;border-top:2px solid #b7cabd}@media(min-width:700px){.stats{grid-template-columns:repeat(5,1fr)}body{padding-bottom:0}.bottom{display:none}}
 
@@ -14,9 +14,17 @@
 .small11{font-size:11px;color:#687468}
 .warn11{background:#fff4d7;border:1px solid #ead89c;border-radius:10px;padding:10px;margin:8px 0}
 </style></head><body>
-<header><h1>🐄 Punganur Heritage V11</h1><small>Professional Herd OS • Breeding • Pedigree • Calving • Milk • Health • Reports</small></header>
+<header><h1>🐄 Punganur Heritage V11.1</h1><small>Professional Herd OS • Breeding • Pedigree • Calving • Milk • Health • Reports</small></header>
 <main>
 <section id="home" class="screen on"><div class="hero"><h2>Your herd, organized.</h2><p>Automatic local storage — no need to export after every entry.</p></div><div class="stats"><div class="stat"><b id="total">0</b><small>Total cattle</small></div><div class="stat"><b id="female">0</b><small>Females</small></div><div class="stat"><b id="male">0</b><small>Males</small></div><div class="stat"><b id="preg">0</b><small>Pregnant</small></div><div class="stat"><b id="calf">0</b><small>Calves</small></div></div><div class="card"><h3>V11 Data Integrity</h3>
+<div class="card"><h3>🗑️ Record Management</h3>
+<div class="grid">
+<button class="primary" onclick="openRecordManager11()">📋 Manage Records</button>
+<button class="danger" onclick="openDeleteManager11()">🗑️ Delete Record</button>
+</div>
+<p class="muted">Select any cattle record to Edit, Delete or Restore.</p>
+</div>
+
 <button class="primary" onclick="openDataManager11()">🛡️ Data Manager</button>
 <p class="muted">Duplicate protection • Edit • Delete • Restore • Audit history</p>
 </div>
@@ -223,7 +231,9 @@ async function generateReport10(){
  <button class="secondary" onclick="printAnimal10()">🖨️ Print / Save PDF</button>`;
  window._reportAnimal=a
 }
-function printAnimal10(){let a=window._reportAnimal;if(!a)return;let w=window.open('','_blank');w.document.write(`<html><head><title>Punganur Animal Report</title><style>body{font-family:Arial;padding:30px}h1{color:#174f36}.box{border:1px solid #ddd;padding:15px;border-radius:10px;margin:10px 0}</style></head><body><h1>Punganur Heritage — Animal Report</h1><div class="box"><h2>${esc(a.name||'Unnamed')}</h2><b>Tag:</b> ${esc(a.tag||'—')}<br><b>DOB:</b> ${esc(a.dob||'—')}<br><b>Sex:</b> ${esc(a.sex||'—')}<br><b>Status:</b> ${esc(a.status||'—')}</div><div class="box"><h3>Pedigree</h3>Father: ${esc(a.sire||'—')}<br>Mother: ${esc(a.dam||'—')}<br>PGF/PGM: ${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}<br>MGF/MGM: ${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</div><p>Generated by Punganur Heritage V11</p></body></html>`);w.document.close();w.print()}
+function printAnimal10(){let a=window._reportAnimal;if(!a)return;let w=window.open('','_blank');w.document.write(`<html><head><title>Punganur Animal Report</title><style>body{font-family:Arial;padding:30px}h1{color:#174f36}.box{border:1px solid #ddd;padding:15px;border-radius:10px;margin:10px 0}</style></head><body><h1>Punganur Heritage — Animal Report</h1><div class="box"><h2>${esc(a.name||'Unnamed')}</h2><b>Tag:</b> ${esc(a.tag||'—')}<br><b>DOB:</b> ${esc(a.dob||'—')}<br><b>Sex:</b> ${esc(a.sex||'—')}<br><b>Status:</b> ${esc(a.status||'—')}</div><div class="box"><h3>Pedigree</h3>Father: ${esc(a.sire||'—')}<br>Mother: ${esc(a.dam||'—')}<br>PGF/PGM: ${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}<br>MGF/MGM: ${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</div><p>Generated by Punganur Heritage V11.1</p><div style="position:fixed;right:14px;bottom:14px;z-index:9999">
+<button class="danger" onclick="openDeleteManager11()">🗑️ Delete Record</button>
+</div></body></html>`);w.document.close();w.print()}
 async function openGeneration10(){
  let a=await all('animals');
  let by={};a.forEach(x=>{let k=x.dob?new Date(x.dob).getFullYear():'Unknown';by[k]=(by[k]||0)+1});
