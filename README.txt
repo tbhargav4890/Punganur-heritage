@@ -1,15 +1,12 @@
-Punganur Cattles Custom App V2
+Punganur Cattles V2 — V1 GUI Edition
 
-V2 additions:
-- Profile picture upload
-- Custom app logo upload
-- Multiple cow/bull pictures
-- Automatic home-page cow picture slider
-- Cattle register with unique IDs
-- Individual cattle page with linked records
-- Edit/Save/Update/Delete on cattle and all record modules
-- Duplicate ID protection
-- Local phone storage
-- Backup/Restore
+Keeps the V1-style GUI and adds:
+- Home-page automatic cow/bull photo slider
+- Slider captions show the linked Animal ID
+- Primary photo shown with each cattle record
+- Multiple photos stored under the exact Animal ID
+- Individual animal photo gallery with add/delete
+- Existing cattle, breeding, calving, lactation, health, semen, pedigree, edit/save/delete, duplicate ID protection, backup/restore
+- Profile picture and logo upload
 
-Upload these files to your GitHub Pages repository, then open the site in Chrome on Android and choose Install app/Add to Home screen.
+Upload the files to HTTPS hosting and install through Chrome on Android.
