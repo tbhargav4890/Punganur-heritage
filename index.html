@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#174f36"><link rel="manifest" href="manifest.json"><title>Punganur Heritage V10</title>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#174f36"><link rel="manifest" href="manifest.json"><title>Punganur Heritage V11</title>
 <style>
 :root{--g:#174f36;--bg:#f4f7f2;--line:#dce5dd;--muted:#69756d}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#17231b;font:15px system-ui}header{background:linear-gradient(135deg,#123b2a,#2e7a55);color:#fff;padding:18px;position:sticky;top:0;z-index:5}h1{margin:0;font-size:21px}main{max-width:900px;margin:auto;padding:14px 14px 85px}.screen{display:none}.screen.on{display:block}.hero{background:linear-gradient(135deg,#174f36,#4e8b65);color:#fff;padding:20px;border-radius:20px;margin-bottom:12px}.hero h2{margin:0 0 5px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.card,.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;margin-bottom:10px;box-shadow:0 3px 14px #173b2710}.stat{background:#edf5ef}.stat b{font-size:25px;color:var(--g);display:block}.stat small{color:var(--muted)}button{border:0;border-radius:11px;padding:10px 13px;font-weight:800}.primary{background:var(--g);color:#fff}.secondary{background:#e8f1ea;color:var(--g)}.danger{background:#fff0ef;color:#b43d35}input,select,textarea{width:100%;padding:11px;border:1px solid #cfd9d1;border-radius:10px;background:#fff;font:inherit}textarea{min-height:70px}label{display:block;font-size:11px;color:var(--muted);font-weight:800;margin:5px 0}.animal{display:flex;gap:11px;align-items:center}.photo{width:60px;height:60px;border-radius:14px;object-fit:cover;background:#e8efe9;display:grid;place-items:center;font-size:28px;flex:none}.grow{flex:1}.muted{font-size:12px;color:var(--muted)}.pill{display:inline-block;background:#e8f1ea;color:var(--g);padding:4px 8px;border-radius:99px;font-size:10px;font-weight:800;margin:2px}.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);z-index:9}.nav{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr)}.nav button{background:#fff;color:#68746c;font-size:10px}.nav button.on{color:var(--g);background:#edf5ef}.nav span{display:block;font-size:20px}.close{float:right;background:#edf2ee;border-radius:50%}dialog{border:0;border-radius:20px;width:min(800px,94vw);max-height:90vh}dialog::backdrop{background:#0008}.tree{display:flex;flex-direction:column;align-items:center;gap:8px}.node{background:#e9f2eb;border:1px solid #cdded1;border-radius:12px;padding:10px 14px;text-align:center;min-width:145px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;position:relative}.pair:before{content:"";position:absolute;top:50%;left:25%;right:25%;border-top:2px solid #b7cabd}@media(min-width:700px){.stats{grid-template-columns:repeat(5,1fr)}body{padding-bottom:0}.bottom{display:none}}
 
@@ -8,10 +8,19 @@
 .badge{display:inline-block;padding:4px 8px;border-radius:99px;background:#fff4d7;color:#76570e;font-size:10px;font-weight:800}
 .timeline{border-left:3px solid #b8cdbd;padding-left:14px}
 .timeline div{margin:10px 0;padding:10px;background:#f7faf7;border-radius:11px}
+
+.danger{background:#a52b2b;color:white;border:0;border-radius:9px;padding:11px 16px}
+.secondary{border:0;border-radius:9px;padding:11px 16px;background:#e5eee5}
+.small11{font-size:11px;color:#687468}
+.warn11{background:#fff4d7;border:1px solid #ead89c;border-radius:10px;padding:10px;margin:8px 0}
 </style></head><body>
-<header><h1>🐄 Punganur Heritage V10</h1><small>Professional Herd OS • Breeding • Pedigree • Calving • Milk • Health • Reports</small></header>
+<header><h1>🐄 Punganur Heritage V11</h1><small>Professional Herd OS • Breeding • Pedigree • Calving • Milk • Health • Reports</small></header>
 <main>
-<section id="home" class="screen on"><div class="hero"><h2>Your herd, organized.</h2><p>Automatic local storage — no need to export after every entry.</p></div><div class="stats"><div class="stat"><b id="total">0</b><small>Total cattle</small></div><div class="stat"><b id="female">0</b><small>Females</small></div><div class="stat"><b id="male">0</b><small>Males</small></div><div class="stat"><b id="preg">0</b><small>Pregnant</small></div><div class="stat"><b id="calf">0</b><small>Calves</small></div></div><div class="card"><h3>V10 Professional Herd OS</h3>
+<section id="home" class="screen on"><div class="hero"><h2>Your herd, organized.</h2><p>Automatic local storage — no need to export after every entry.</p></div><div class="stats"><div class="stat"><b id="total">0</b><small>Total cattle</small></div><div class="stat"><b id="female">0</b><small>Females</small></div><div class="stat"><b id="male">0</b><small>Males</small></div><div class="stat"><b id="preg">0</b><small>Pregnant</small></div><div class="stat"><b id="calf">0</b><small>Calves</small></div></div><div class="card"><h3>V11 Data Integrity</h3>
+<button class="primary" onclick="openDataManager11()">🛡️ Data Manager</button>
+<p class="muted">Duplicate protection • Edit • Delete • Restore • Audit history</p>
+</div>
+<div class="card"><h3>V10 Professional Herd OS</h3>
 <div class="grid">
 <button class="secondary" onclick="openAlerts10()">🔔 Alerts</button>
 <button class="secondary" onclick="openBullStats10()">🐂 Bull Performance</button>
@@ -214,7 +223,7 @@ async function generateReport10(){
  <button class="secondary" onclick="printAnimal10()">🖨️ Print / Save PDF</button>`;
  window._reportAnimal=a
 }
-function printAnimal10(){let a=window._reportAnimal;if(!a)return;let w=window.open('','_blank');w.document.write(`<html><head><title>Punganur Animal Report</title><style>body{font-family:Arial;padding:30px}h1{color:#174f36}.box{border:1px solid #ddd;padding:15px;border-radius:10px;margin:10px 0}</style></head><body><h1>Punganur Heritage — Animal Report</h1><div class="box"><h2>${esc(a.name||'Unnamed')}</h2><b>Tag:</b> ${esc(a.tag||'—')}<br><b>DOB:</b> ${esc(a.dob||'—')}<br><b>Sex:</b> ${esc(a.sex||'—')}<br><b>Status:</b> ${esc(a.status||'—')}</div><div class="box"><h3>Pedigree</h3>Father: ${esc(a.sire||'—')}<br>Mother: ${esc(a.dam||'—')}<br>PGF/PGM: ${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}<br>MGF/MGM: ${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</div><p>Generated by Punganur Heritage V10</p></body></html>`);w.document.close();w.print()}
+function printAnimal10(){let a=window._reportAnimal;if(!a)return;let w=window.open('','_blank');w.document.write(`<html><head><title>Punganur Animal Report</title><style>body{font-family:Arial;padding:30px}h1{color:#174f36}.box{border:1px solid #ddd;padding:15px;border-radius:10px;margin:10px 0}</style></head><body><h1>Punganur Heritage — Animal Report</h1><div class="box"><h2>${esc(a.name||'Unnamed')}</h2><b>Tag:</b> ${esc(a.tag||'—')}<br><b>DOB:</b> ${esc(a.dob||'—')}<br><b>Sex:</b> ${esc(a.sex||'—')}<br><b>Status:</b> ${esc(a.status||'—')}</div><div class="box"><h3>Pedigree</h3>Father: ${esc(a.sire||'—')}<br>Mother: ${esc(a.dam||'—')}<br>PGF/PGM: ${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}<br>MGF/MGM: ${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</div><p>Generated by Punganur Heritage V11</p></body></html>`);w.document.close();w.print()}
 async function openGeneration10(){
  let a=await all('animals');
  let by={};a.forEach(x=>{let k=x.dob?new Date(x.dob).getFullYear():'Unknown';by[k]=(by[k]||0)+1});
@@ -222,6 +231,129 @@ async function openGeneration10(){
  modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🌳 Generation Overview</h2>
  <p class="muted">A quick view of animals grouped by birth year. For true pedigree generations, keep sire and dam links complete.</p>
  ${sorted.map(([y,n])=>`<div class="card"><b>${esc(y)}</b><div class="muted">${n} animal${n===1?'':'s'}</div></div>`).join('')||'<p class="muted">No animals recorded.</p>'}`;dlg.showModal()
+}
+
+
+/* ================= V11 DATA INTEGRITY ================= */
+function norm11(v){return String(v??'').trim().toLowerCase()}
+function uid11(){return (crypto&&crypto.randomUUID)?crypto.randomUUID():'id-'+Date.now()+'-'+Math.random().toString(16).slice(2)}
+async function animal11(id){return (await all('animals')).find(x=>x.id===id)}
+
+async function duplicateAnimal11(x,excludeId=''){
+ const aa=await all('animals'), tag=norm11(x.tag||x.id), name=norm11(x.name), dob=norm11(x.dob);
+ return aa.filter(a=>a.id!==excludeId && ((tag&&norm11(a.tag||a.id)===tag)||(name&&dob&&norm11(a.name)===name&&norm11(a.dob)===dob)))
+}
+
+async function saveAnimalV11(x,editingId=''){
+ x.id=editingId||x.id||uid11(); x.tag=String(x.tag||x.id).trim();
+ if(!x.tag) throw new Error('Animal Tag / ID is required.');
+ const dup=await duplicateAnimal11(x,editingId);
+ if(dup.length) throw new Error('Duplicate animal detected. Tag/ID already exists: '+dup.map(d=>(d.name||'Unnamed')+' ('+(d.tag||d.id)+')').join(', '));
+ const old=editingId?await animal11(editingId):null;
+ x.createdAt=old?.createdAt||x.createdAt||new Date().toISOString();
+ x.updatedAt=new Date().toISOString(); x.schemaVersion=11;
+ await put('animals',x); return x;
+}
+
+async function deleteStore11(store,id){
+ await db.transaction(store,'readwrite').objectStore(store).delete(id)
+}
+
+async function deleteAnimalV11(id){
+ const a=await animal11(id); if(!a)return;
+ if(!confirm(`Move ${a.name||'this animal'} (${a.tag||a.id}) to Recycle Bin?`))return;
+ const trash=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');
+ const bundle={deletedAt:new Date().toISOString(),animal:a,linked:{}};
+ for(const store of ['breeding','lactation','health']){
+   bundle.linked[store]=(await all(store)).filter(r=>r.animal===id||r.cow===id||r.female===id||r.animalId===id||r.cowId===id);
+   for(const r of bundle.linked[store]) await deleteStore11(store,r.id);
+ }
+ trash.push(bundle); localStorage.setItem('punganurV11Trash',JSON.stringify(trash));
+ await deleteStore11('animals',id); closeD(); render();
+ alert('Moved to Recycle Bin. It can be restored.')
+}
+
+async function scanDuplicates11(show=true){
+ const aa=await all('animals'),groups={};
+ aa.forEach(a=>{const k=norm11(a.tag||a.id);if(k)(groups[k]??=[]).push(a)});
+ const d=Object.values(groups).filter(g=>g.length>1);
+ if(show){
+   modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🔍 Duplicate Scan</h2>`+
+   (d.length?d.map(g=>`<div class="warn11"><b>Duplicate Tag/ID: ${esc(g[0].tag||g[0].id)}</b><br>${g.map(x=>esc(x.name||'Unnamed')+' — '+esc(x.tag||x.id)).join('<br>')}</div>`).join(''):'<div class="card">✅ No duplicate Tags/IDs found.</div>');
+   dlg.showModal()
+ }
+ return d
+}
+
+async function openDataManager11(){
+ const aa=await all('animals'),trash=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');
+ modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🛡️ V11 Data Manager</h2>
+ <div class="v7grid"><div class="metric"><b>${aa.length}</b>Animals</div><div class="metric"><b>${trash.length}</b>Recycle Bin</div></div>
+ <div class="card"><button class="primary" onclick="scanDuplicates11()">🔍 Scan duplicates</button>
+ <button class="secondary" onclick="openRecycle11()">♻️ Recycle Bin</button></div>
+ <div class="card"><b>Safe record handling</b><p class="muted">Editing updates the existing animal. Saving a duplicate Tag/ID is blocked.</p>
+ <button class="secondary" onclick="exportV11Backup()">💾 Backup now</button></div>`;
+ dlg.showModal()
+}
+
+async function openRecycle11(){
+ const t=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');
+ modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>♻️ Recycle Bin</h2>`+
+ (t.length?t.slice().reverse().map((b,i)=>{const ix=t.length-1-i;return `<div class="card"><b>${esc(b.animal.name||'Unnamed')}</b> — ${esc(b.animal.tag||b.animal.id)}<div class="small11">Deleted ${esc(b.deletedAt)}</div>
+ <button class="primary" onclick="restoreTrash11(${ix})">Restore</button><button class="danger" onclick="purgeTrash11(${ix})">Permanently delete</button></div>`}).join(''):'<p class="muted">Recycle Bin is empty.</p>');
+ dlg.showModal()
+}
+
+async function restoreTrash11(index){
+ const t=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]'),b=t[index];if(!b)return;
+ const dup=await duplicateAnimal11(b.animal,'');if(dup.length){alert('Cannot restore: Tag/ID already exists.');return}
+ await put('animals',b.animal);
+ for(const [store,rs] of Object.entries(b.linked||{}))for(const r of rs)await put(store,r);
+ t.splice(index,1);localStorage.setItem('punganurV11Trash',JSON.stringify(t));closeD();render();alert('Restored successfully.')
+}
+function purgeTrash11(index){
+ const t=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');if(!t[index])return;
+ if(!confirm('Permanently delete this record? This cannot be undone.'))return;
+ t.splice(index,1);localStorage.setItem('punganurV11Trash',JSON.stringify(t));openRecycle11()
+}
+
+async function exportV11Backup(){
+ const stores=['animals','breeding','lactation','health'],data={app:'Punganur Heritage',version:'V11',exportedAt:new Date().toISOString(),stores:{}};
+ for(const s of stores)data.stores[s]=await all(s);
+ data.trash=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='punganur-heritage-v11-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)
+}
+
+async function editAnimal11(id){
+ const x=await animal11(id);if(!x)return;
+ modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>✏️ Edit Animal</h2>
+ <div class="grid">
+ <div><label>Name</label><input id="e11name" value="${esc(x.name||'')}"></div>
+ <div><label>Tag / Animal ID</label><input id="e11tag" value="${esc(x.tag||x.id)}"></div>
+ <div><label>Sex</label><select id="e11sex"><option ${x.sex==='Female'?'selected':''}>Female</option><option ${x.sex==='Male'?'selected':''}>Male</option></select></div>
+ <div><label>DOB</label><input id="e11dob" type="date" value="${esc(x.dob||'')}"></div>
+ <div><label>Sire / Father</label><input id="e11sire" value="${esc(x.sire||x.father||'')}"></div>
+ <div><label>Dam / Mother</label><input id="e11dam" value="${esc(x.dam||x.mother||'')}"></div>
+ <div><label>Breed</label><input id="e11breed" value="${esc(x.breed||'Punganur')}"></div></div>
+ <button class="primary" onclick="saveEdit11('${id}')">Save Changes</button>
+ <button class="danger" onclick="deleteAnimalV11('${id}')">Delete</button>`;
+ dlg.showModal()
+}
+async function saveEdit11(id){
+ const old=await animal11(id),x={...old,name:$('e11name').value.trim()||'Unnamed',tag:$('e11tag').value.trim(),sex:$('e11sex').value,dob:$('e11dob').value,sire:$('e11sire').value.trim(),dam:$('e11dam').value.trim(),breed:$('e11breed').value.trim()||'Punganur'};
+ try{await saveAnimalV11(x,id);closeD();render();alert('Animal updated successfully.')}catch(e){alert(e.message)}
+}
+
+async function openV11CattleManager(){
+ modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🐄 Cattle Register V11</h2>
+ <input id="v11search" placeholder="Search name, tag, sire or dam" oninput="renderV11Cattle()"><div id="v11cattle"></div>`;
+ dlg.showModal();renderV11Cattle()
+}
+async function renderV11Cattle(){
+ const q=norm11($('v11search')?.value||''),aa=(await all('animals')).filter(x=>!q||[x.name,x.tag,x.sire,x.dam,x.dob].some(v=>norm11(v).includes(q)));
+ $('v11cattle').innerHTML=aa.map(x=>`<div class="card"><b>${esc(x.name||'Unnamed')}</b> <span class="tag">${esc(x.tag||x.id)}</span><div class="small11">${esc(x.sex||'')} • DOB ${esc(x.dob||'—')} • Sire ${esc(x.sire||'—')} • Dam ${esc(x.dam||'—')}</div>
+ <button class="primary" onclick="editAnimal11('${x.id}')">Edit</button><button class="danger" onclick="deleteAnimalV11('${x.id}')">Delete</button></div>`).join('')||'<p class="muted">No cattle found.</p>'
 }
 
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});init().then(render);

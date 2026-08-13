@@ -1,9 +1,9 @@
 {
-  "name": "Punganur Heritage V10",
-  "short_name": "Punganur V10",
+  "name": "Punganur Heritage V11",
+  "short_name": "Punganur V11",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f7f2",
-  "theme_color": "#174f36",
-  "description": "Professional Punganur cattle herd management system"
+  "theme_color": "#315b3a",
+  "description": "Punganur cattle management with duplicate protection, editing, deletion and recovery"
 }

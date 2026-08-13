@@ -1,17 +1,19 @@
-# Punganur Heritage V10
+Punganur Heritage V11 — Data Integrity Edition
 
-Professional Herd OS for Punganur cattle.
+V11 fixes the V10 data-management defects:
+- Unique Tag/Animal ID protection.
+- Duplicate scan.
+- Edit existing animal without creating a duplicate.
+- Delete with confirmation.
+- Recycle Bin and restore.
+- Permanent deletion confirmation.
+- Safe JSON backup.
+- Created/updated timestamps.
+- Dedicated search/manage screen.
+- V11 cache version.
 
-V10 additions:
-- Herd Alerts
-- Upcoming calving view
-- Bull/semen performance statistics
-- Per-animal report
-- Print / Save as PDF from browser
-- Generation overview
-- Existing V9 breeding intelligence, lineage, pedigree, calf, lactation, health, semen and backup modules
-- Offline IndexedDB database
-- Versioned V10 service worker
-
-Before updating, export a backup from V9.
-Replace the GitHub Pages files with V10 and hard-refresh once.
+Before installing:
+1. Export a V10 backup.
+2. Replace the GitHub Pages files with V11.
+3. Hard-refresh once / clear site data if V10 still appears.
+4. Test with one sample animal before entering the full herd.
