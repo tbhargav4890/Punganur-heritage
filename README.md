@@ -1,19 +1,16 @@
-Punganur Heritage V11 — Data Integrity Edition
+Punganur Heritage V12 — Reliable Record Management
 
-V11 fixes the V10 data-management defects:
-- Unique Tag/Animal ID protection.
-- Duplicate scan.
-- Edit existing animal without creating a duplicate.
-- Delete with confirmation.
-- Recycle Bin and restore.
-- Permanent deletion confirmation.
-- Safe JSON backup.
-- Created/updated timestamps.
-- Dedicated search/manage screen.
-- V11 cache version.
+This version specifically fixes the V11/V11.1 edit and delete button problem.
 
-Before installing:
-1. Export a V10 backup.
-2. Replace the GitHub Pages files with V11.
-3. Hard-refresh once / clear site data if V10 still appears.
-4. Test with one sample animal before entering the full herd.
+- Uses direct button event handlers instead of fragile inline handlers.
+- Dedicated V12 Cattle Record Manager.
+- Edit saves changes to the same animal ID.
+- Duplicate Tag/Animal ID is blocked during editing.
+- Delete moves the animal and linked breeding/lactation/health records to Recycle Bin.
+- V12 cache name prevents stale V11/V11.1 JavaScript from being used.
+
+Update:
+1. Backup your current data first.
+2. Replace all GitHub Pages files with these V12 files.
+3. Clear the old site/app cache once.
+4. Open the app and tap Edit / Delete from V12 Data Manager.
