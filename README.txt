@@ -1,16 +1,19 @@
-Punganur Heritage V4
-Upload index.html, manifest.json and sw.js to the root of the existing GitHub Pages repository.
+Punganur Cattles — V1 custom offline-first app
 
-V4 improvements:
-- Stable Android-friendly forms and navigation
-- Automatic migration from V3 local data keys
-- Animal profile with photo, DOB and automatic age
-- Father, mother and four grandparent ID fields
-- 5-generation-ready pedigree structure
-- Breeding/AI history with bull/semen straw ID, pregnancy and expected calving
-- Calving/calf records
-- Lactation number, peak, average and total milk
-- Health/vaccination/deworming/treatment records
-- Search, edit and delete
-- Full JSON backup/restore
-- Offline service worker with cache cleanup
+Features:
+- Dashboard
+- Cattle, Breeding, Calves, Lactation, Health, Bulls, Semen Bank
+- Individual animal complete profile
+- Edit / Save / Delete / Cancel in every record module
+- Duplicate ID protection
+- Recycle Bin + Restore
+- JSON backup and restore without duplicate records
+- Works offline in the browser after first load
+
+Install on Android:
+1. Upload these files to an HTTPS static host such as GitHub Pages.
+2. Open the site in Chrome on your Android phone.
+3. Chrome menu -> Add to Home screen / Install app.
+4. The app stores records locally on the phone.
+
+This is the first custom foundation. The owner's profile photo and final farm logo can be added in the next build.

@@ -1,455 +1,137 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#174f36"><link rel="manifest" href="manifest.json"><title>Punganur Heritage V12</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173d1f">
+<link rel="manifest" href="manifest.json">
+<title>Punganur Cattles</title>
 <style>
-:root{--g:#174f36;--bg:#f4f7f2;--line:#dce5dd;--muted:#69756d}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#17231b;font:15px system-ui}header{background:linear-gradient(135deg,#123b2a,#2e7a55);color:#fff;padding:18px;position:sticky;top:0;z-index:5}h1{margin:0;font-size:21px}main{max-width:900px;margin:auto;padding:14px 14px 85px}.screen{display:none}.screen.on{display:block}.hero{background:linear-gradient(135deg,#174f36,#4e8b65);color:#fff;padding:20px;border-radius:20px;margin-bottom:12px}.hero h2{margin:0 0 5px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.card,.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;margin-bottom:10px;box-shadow:0 3px 14px #173b2710}.stat{background:#edf5ef}.stat b{font-size:25px;color:var(--g);display:block}.stat small{color:var(--muted)}button{border:0;border-radius:11px;padding:10px 13px;font-weight:800}.primary{background:var(--g);color:#fff}.secondary{background:#e8f1ea;color:var(--g)}.danger{background:#fff0ef;color:#b43d35}input,select,textarea{width:100%;padding:11px;border:1px solid #cfd9d1;border-radius:10px;background:#fff;font:inherit}textarea{min-height:70px}label{display:block;font-size:11px;color:var(--muted);font-weight:800;margin:5px 0}.animal{display:flex;gap:11px;align-items:center}.photo{width:60px;height:60px;border-radius:14px;object-fit:cover;background:#e8efe9;display:grid;place-items:center;font-size:28px;flex:none}.grow{flex:1}.muted{font-size:12px;color:var(--muted)}.pill{display:inline-block;background:#e8f1ea;color:var(--g);padding:4px 8px;border-radius:99px;font-size:10px;font-weight:800;margin:2px}.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);z-index:9}.nav{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr)}.nav button{background:#fff;color:#68746c;font-size:10px}.nav button.on{color:var(--g);background:#edf5ef}.nav span{display:block;font-size:20px}.close{float:right;background:#edf2ee;border-radius:50%}dialog{border:0;border-radius:20px;width:min(800px,94vw);max-height:90vh}dialog::backdrop{background:#0008}.tree{display:flex;flex-direction:column;align-items:center;gap:8px}.node{background:#e9f2eb;border:1px solid #cdded1;border-radius:12px;padding:10px 14px;text-align:center;min-width:145px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;position:relative}.pair:before{content:"";position:absolute;top:50%;left:25%;right:25%;border-top:2px solid #b7cabd}@media(min-width:700px){.stats{grid-template-columns:repeat(5,1fr)}body{padding-bottom:0}.bottom{display:none}}
+:root{--green:#173d1f;--green2:#2d6a34;--cream:#fffaf0;--gold:#c8952e;--ink:#182019;--muted:#667064;--card:#fffdf7;--danger:#b52a2a}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--cream);color:var(--ink)}
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,240,.97);backdrop-filter:blur(10px);padding:12px 14px 10px;border-bottom:1px solid #eadfca;display:flex;align-items:center;gap:10px}
+.brand{flex:1;text-align:center}.brand h1{margin:0;color:var(--green);font-family:Georgia,serif;font-size:24px}.brand p{margin:2px 0 0;font-size:11px;color:var(--green2);font-weight:600}
+.iconbtn{border:0;background:transparent;font-size:26px;color:var(--green);padding:5px}.profile{width:42px;height:42px;border-radius:50%;border:2px solid var(--green);display:grid;place-items:center;background:#e8f0e6;font-size:20px}
+main{padding-bottom:90px}.hero{height:190px;background:linear-gradient(135deg,#315f32,#b1c681);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,#ffe9a7 0 8%,transparent 9%),linear-gradient(180deg,transparent 45%,rgba(12,45,18,.38));}.heroTitle{position:absolute;z-index:2;left:18px;bottom:16px;color:#fff;font-family:Georgia,serif;font-size:22px;text-shadow:0 2px 5px #173d1f}
+.wrap{padding:14px}.section{background:var(--card);border:1px solid #eadfca;border-radius:20px;padding:14px;margin-bottom:14px;box-shadow:0 5px 18px rgba(70,50,20,.07)}.section h2{margin:0 0 12px;font-size:19px;color:var(--green)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stat{padding:10px 5px;border-right:1px solid #eadfca;text-align:center}.stat:last-child{border:0}.stat .n{font-size:25px;font-weight:800;color:var(--green)}.stat .l{font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.tile{border:1px solid #eee2ce;background:#fffaf0;border-radius:15px;padding:12px 6px;text-align:center;color:var(--green);font-weight:700}.tile .ico{font-size:25px;display:block;margin-bottom:4px}.tile small{display:block;font-weight:600;font-size:11px}
+.bottom{position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--green);display:grid;grid-template-columns:repeat(5,1fr);padding:7px 5px calc(7px + env(safe-area-inset-bottom));box-shadow:0 -4px 16px rgba(0,0,0,.18)}.bottom button{border:0;background:transparent;color:#fff8e8;font-weight:700;font-size:10px;padding:6px}.bottom .ico{display:block;font-size:22px}.bottom .active{background:rgba(255,255,255,.14);border-radius:13px}
+.view{display:none}.view.active{display:block}
+.row{display:flex;gap:8px;align-items:center}.between{justify-content:space-between}.search{width:100%;padding:12px 13px;border:1px solid #ddd0b9;border-radius:13px;background:#fff}.btn{border:0;border-radius:11px;padding:10px 13px;font-weight:700}.primary{background:var(--green);color:white}.secondary{background:#efe6d5;color:var(--green)}.danger{background:#f8dddd;color:var(--danger)}.card{border:1px solid #e5dac6;border-radius:15px;padding:12px;margin:9px 0;background:#fff}.muted{color:var(--muted);font-size:12px}.pill{display:inline-block;padding:4px 8px;border-radius:99px;background:#e6f0e5;color:var(--green);font-size:11px;font-weight:700}
+.list-empty{text-align:center;padding:30px;color:var(--muted)}
+.form{display:grid;gap:10px}.form label{font-size:12px;font-weight:700;color:var(--green)}.form input,.form select,.form textarea{width:100%;padding:11px;border:1px solid #ddd0b9;border-radius:11px;background:#fff}.form textarea{min-height:90px}.form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:50;display:none;align-items:flex-end}.modal.show{display:flex}.sheet{background:var(--cream);width:100%;max-height:92vh;overflow:auto;border-radius:22px 22px 0 0;padding:16px}.sheet h2{margin-top:0;color:var(--green)}
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:9px}.kv{background:#fff;border:1px solid #eadfca;border-radius:12px;padding:10px}.kv b{display:block;font-size:11px;color:var(--muted)}.kv span{font-weight:700}
+.toast{position:fixed;left:50%;bottom:85px;transform:translateX(-50%);background:#182019;color:#fff;padding:10px 15px;border-radius:99px;z-index:100;display:none}.toast.show{display:block}
+@media(min-width:700px){body{max-width:700px;margin:auto;border-left:1px solid #eadfca;border-right:1px solid #eadfca}.bottom{max-width:700px;margin:auto}}
+</style>
+</head>
+<body>
+<header>
+<button class="iconbtn" onclick="showView('more')">☰</button>
+<div class="brand"><h1>Punganur Cattles</h1><p>Heritage • Breeding • Conservation</p></div>
+<button class="iconbtn" onclick="showView('alerts')">🔔</button>
+<div class="profile">👤</div>
+</header>
 
-.v7grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.metric{background:#f0f6f1;border:1px solid #d9e6dc;border-radius:13px;padding:11px}
-.metric b{display:block;color:#174f36;font-size:20px}
-.badge{display:inline-block;padding:4px 8px;border-radius:99px;background:#fff4d7;color:#76570e;font-size:10px;font-weight:800}
-.timeline{border-left:3px solid #b8cdbd;padding-left:14px}
-.timeline div{margin:10px 0;padding:10px;background:#f7faf7;border-radius:11px}
-
-.danger{background:#a52b2b;color:white;border:0;border-radius:9px;padding:11px 16px}
-.secondary{border:0;border-radius:9px;padding:11px 16px;background:#e5eee5}
-.small11{font-size:11px;color:#687468}
-.warn11{background:#fff4d7;border:1px solid #ead89c;border-radius:10px;padding:10px;margin:8px 0}
-</style></head><body>
-<header><h1>🐄 Punganur Heritage V12</h1><small>Professional Herd OS • Breeding • Pedigree • Calving • Milk • Health • Reports</small></header>
 <main>
-<section id="home" class="screen on"><div class="hero"><h2>Your herd, organized.</h2><p>Automatic local storage — no need to export after every entry.</p></div><div class="stats"><div class="stat"><b id="total">0</b><small>Total cattle</small></div><div class="stat"><b id="female">0</b><small>Females</small></div><div class="stat"><b id="male">0</b><small>Males</small></div><div class="stat"><b id="preg">0</b><small>Pregnant</small></div><div class="stat"><b id="calf">0</b><small>Calves</small></div></div><div class="card"><h3>V11 Data Integrity</h3>
-<div class="card"><h3>🗑️ Record Management</h3>
-<div class="grid">
-<button class="primary" onclick="openRecordManager11()">📋 Manage Records</button>
-<button class="danger" onclick="openDeleteManager11()">🗑️ Delete Record</button>
+<section id="home" class="view active">
+<div class="hero"><div class="heroTitle">Small in Size, Great in Value</div></div>
+<div class="wrap">
+<div class="section"><h2>Today's Overview</h2><div class="stats">
+<div class="stat"><div class="n" id="sTotal">0</div><div class="l">Total</div></div>
+<div class="stat"><div class="n" id="sCows">0</div><div class="l">Cows</div></div>
+<div class="stat"><div class="n" id="sBulls">0</div><div class="l">Bulls</div></div>
+<div class="stat"><div class="n" id="sCalves">0</div><div class="l">Calves</div></div>
+</div></div>
+<div class="section"><h2>Quick Access</h2><div class="grid">
+<div class="tile" onclick="showView('cattle')"><span class="ico">🐄</span>Cattle</div>
+<div class="tile" onclick="showView('breeding')"><span class="ico">🧬</span>Breeding</div>
+<div class="tile" onclick="showView('calves')"><span class="ico">🐮</span>Calves</div>
+<div class="tile" onclick="showView('lactation')"><span class="ico">🥛</span>Lactation</div>
+<div class="tile" onclick="showView('health')"><span class="ico">🩺</span>Health</div>
+<div class="tile" onclick="showView('bulls')"><span class="ico">🐂</span>Bulls</div>
+<div class="tile" onclick="showView('semen')"><span class="ico">🧪</span>Semen Bank</div>
+<div class="tile" onclick="showView('pedigree')"><span class="ico">🌳</span>Pedigree</div>
+<div class="tile" onclick="showView('reports')"><span class="ico">📊</span>Reports</div>
+<div class="tile" onclick="backupData()"><span class="ico">☁️</span>Backup</div>
+<div class="tile" onclick="showView('recycle')"><span class="ico">🗑️</span>Recycle Bin</div>
+<div class="tile" onclick="showView('more')"><span class="ico">•••</span>More</div>
+</div></div>
+<div class="section"><h2>Our Purpose</h2><div class="detail">
+<div class="kv"><b>Breed</b><span>Punganur</span></div><div class="kv"><b>Focus</b><span>Conservation</span></div>
+<div class="kv"><b>Breeding</b><span>Pedigree based</span></div><div class="kv"><b>Records</b><span>Offline-first</span></div>
+</div></div>
 </div>
-<p class="muted">Select any cattle record to Edit, Delete or Restore.</p>
-</div>
+</section>
 
-<button class="primary" onclick="openDataManager11()">🛡️ Data Manager</button><button class="primary" onclick="v12Manager()">✏️ Edit / 🗑️ Delete</button>
-<p class="muted">Duplicate protection • Edit • Delete • Restore • Audit history</p>
-</div>
-<div class="card"><h3>V10 Professional Herd OS</h3>
-<div class="grid">
-<button class="secondary" onclick="openAlerts10()">🔔 Alerts</button>
-<button class="secondary" onclick="openBullStats10()">🐂 Bull Performance</button>
-<button class="secondary" onclick="openCowReport10()">📄 Animal Report</button>
-<button class="secondary" onclick="openGeneration10()">🌳 Generations</button>
-</div></div><div class="card"><h3>V9 Breeding Intelligence</h3>
-<div class="grid">
-<button class="secondary" onclick="openRepro()">🤰 Reproductive Cycle</button>
-<button class="secondary" onclick="openLineage()">🧬 Lineage Explorer</button>
-<button class="secondary" onclick="openCalving()">📅 Calving Planner</button>
-<button class="secondary" onclick="openDashboard9()">📊 Breeding Dashboard</button>
-</div></div><div class="card"><h3>V8 Advanced Tools</h3><div class="grid"><button class="secondary" onclick="openAnimal360()">🐄 Animal 360°</button><button class="secondary" onclick="openBreedingTimeline()">🧬 Breeding Timeline</button><button class="secondary" onclick="openCalfTree()">🌳 Calf Family Tree</button><button class="secondary" onclick="openHerdReport()">📊 Herd Report</button></div></div><div class="card"><h3>V7 Quick Tools</h3>
-<div class="grid">
-<button class="secondary" onclick="openFamilySearch()">🌳 Family Finder</button>
-<button class="secondary" onclick="openSemen()">🧬 Semen Register</button>
-<button class="secondary" onclick="openCalf()">🐮 Calf Register</button>
-<button class="secondary" onclick="openMilk()">📈 Milk Summary</button>
-</div></div><div class="card"><button class="primary" onclick="newAnimal('Female')">＋ Female</button> <button class="secondary" onclick="newAnimal('Male')">＋ Bull</button> <button class="secondary" onclick="newBreed()">🧬 Breeding</button> <button class="secondary" onclick="newHealth()">🩺 Health</button></div><div class="card"><h3>Recent cattle</h3><div id="recent"></div></div></section>
-<section id="herd" class="screen"><div class="card"><button class="primary" onclick="newAnimal()">＋ Add cattle</button><input id="search" placeholder="Search name, tag, sire, dam..." oninput="render()" style="margin-top:9px"></div><div id="herdList"></div></section>
-<section id="breeding" class="screen"><div class="card"><button class="primary" onclick="newBreed()">＋ Add breeding / AI</button></div><div id="breedList"></div></section>
-<section id="lactation" class="screen"><div class="card"><button class="primary" onclick="newLact()">＋ Add lactation</button></div><div id="lactList"></div></section>
-<section id="more" class="screen"><div class="card"><h3>Health records</h3><button class="primary" onclick="newHealth()">＋ Add health record</button><div id="healthList"></div></div><div class="card"><h3>Backup & Restore</h3><button class="primary" onclick="backup()">Download backup</button> <button class="secondary" onclick="file.click()">Restore</button><input id="file" type="file" accept=".json" hidden onchange="restore(event)"><p class="muted">Backup is optional. Records normally stay in the phone database.</p></div><div class="card"><button class="danger" onclick="wipe()">Delete all local records</button></div></section>
-</main><div class="bottom"><div class="nav"><button class="on" data-v="home" onclick="go('home')"><span>⌂</span>Home</button><button data-v="herd" onclick="go('herd')"><span>🐄</span>Herd</button><button data-v="breeding" onclick="go('breeding')"><span>🧬</span>Breeding</button><button data-v="lactation" onclick="go('lactation')"><span>🥛</span>Lactation</button><button data-v="more" onclick="go('more')"><span>☰</span>More</button></div></div>
-<dialog id="dlg"><div id="modal"></div></dialog>
+<section id="cattle" class="view"><div class="wrap"><div class="row between"><h2>Cattle Register</h2><button class="btn primary" onclick="openForm('cattle')">+ Add Cattle</button></div><input class="search" placeholder="Search ID, name, sire, dam..." oninput="renderList('cattle',this.value)"><div id="cattleList"></div></div></section>
+<section id="breeding" class="view"><div class="wrap"><div class="row between"><h2>Breeding</h2><button class="btn primary" onclick="openForm('breeding')">+ Add Breeding</button></div><div id="breedingList"></div></div></section>
+<section id="calves" class="view"><div class="wrap"><div class="row between"><h2>Calves</h2><button class="btn primary" onclick="openForm('calves')">+ Add Calf</button></div><div id="calvesList"></div></div></section>
+<section id="lactation" class="view"><div class="wrap"><div class="row between"><h2>Lactation</h2><button class="btn primary" onclick="openForm('lactation')">+ Add Lactation</button></div><div id="lactationList"></div></div></section>
+<section id="health" class="view"><div class="wrap"><div class="row between"><h2>Health</h2><button class="btn primary" onclick="openForm('health')">+ Add Health Record</button></div><div id="healthList"></div></div></section>
+<section id="bulls" class="view"><div class="wrap"><div class="row between"><h2>Bulls</h2><button class="btn primary" onclick="openForm('bulls')">+ Add Bull</button></div><div id="bullsList"></div></div></section>
+<section id="semen" class="view"><div class="wrap"><div class="row between"><h2>Semen Bank</h2><button class="btn primary" onclick="openForm('semen')">+ Add Straw</button></div><div id="semenList"></div></div></section>
+<section id="pedigree" class="view"><div class="wrap"><h2>Pedigree</h2><p class="muted">Open a cattle record and use “View Complete Profile” to see all linked records.</p><div id="pedigreeList"></div></div></section>
+<section id="reports" class="view"><div class="wrap"><h2>Reports</h2><div id="reportsBox"></div></div></section>
+<section id="recycle" class="view"><div class="wrap"><h2>Recycle Bin</h2><div id="recycleList"></div></div></section>
+<section id="alerts" class="view"><div class="wrap"><h2>Alerts & Reminders</h2><div class="section">No alerts yet. Breeding and health reminders will appear here as records are added.</div></div></section>
+<section id="more" class="view"><div class="wrap"><h2>More</h2><div class="grid">
+<div class="tile" onclick="showView('cattle')">🐄<small>Cattle</small></div><div class="tile" onclick="showView('breeding')">🧬<small>Breeding</small></div><div class="tile" onclick="showView('health')">🩺<small>Health</small></div>
+<div class="tile" onclick="backupData()">💾<small>Export Backup</small></div><div class="tile" onclick="document.getElementById('restoreFile').click()">♻️<small>Restore Backup</small></div><div class="tile" onclick="showView('recycle')">🗑️<small>Recycle Bin</small></div>
+</div><input id="restoreFile" type="file" accept=".json" style="display:none" onchange="restoreData(event)"></div></section>
+</main>
+
+<nav class="bottom">
+<button class="active" data-v="home" onclick="showView('home')"><span class="ico">⌂</span>Home</button>
+<button data-v="cattle" onclick="showView('cattle')"><span class="ico">🐄</span>Cattles</button>
+<button data-v="add" onclick="openQuickAdd()"><span class="ico">＋</span>Add New</button>
+<button data-v="alerts" onclick="showView('alerts')"><span class="ico">🔔</span>Alerts</button>
+<button data-v="more" onclick="showView('more')"><span class="ico">⚙</span>More</button>
+</nav>
+
+<div id="modal" class="modal"><div class="sheet"><div class="row between"><h2 id="modalTitle">Record</h2><button class="iconbtn" onclick="closeModal()">✕</button></div><div id="modalBody"></div></div></div>
+<div id="toast" class="toast"></div>
 <script>
-let db;const $=x=>document.getElementById(x),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function init(){return new Promise((ok,no)=>{let r=indexedDB.open('PunganurHeritageV6',1);r.onupgradeneeded=e=>{let d=e.target.result;['animals','breeding','lactation','health'].forEach(s=>{if(!d.objectStoreNames.contains(s))d.createObjectStore(s,{keyPath:'id'})})};r.onsuccess=()=>{db=r.result;ok()};r.onerror=()=>no(r.error)})}
-function all(s){return new Promise((ok,no)=>{let r=db.transaction(s).objectStore(s).getAll();r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)})}
-function put(s,x){return new Promise((ok,no)=>{let r=db.transaction(s,'readwrite').objectStore(s).put(x);r.onsuccess=ok;r.onerror=()=>no(r.error)})}
-function go(v){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('on'));$(v).classList.add('on');document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('on',x.dataset.v===v));render()}
-function closeD(){dlg.close()}
-function card(a){return `<div class="card animal" onclick="profile('${a.id}')">${a.photo?`<img class="photo" src="${a.photo}">`:'<div class="photo">🐄</div>'}<div class="grow"><b>${esc(a.name||'Unnamed')}</b><div class="muted">${esc(a.tag||'')} • ${esc(a.sex||'')} • ${esc(a.dob||'')}</div><span class="pill">${esc(a.status||'Active')}</span><span class="pill">Lactations ${a.lactations||0}</span></div>›</div>`}
-function newAnimal(sex='Female',old=null){let a=old||{id:crypto.randomUUID(),sex,status:'Active',lactations:0};modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>${old?'Edit':'Add'} cattle</h2><form id="af"><div class="grid"><div><label>Name *</label><input name="name" value="${esc(a.name)}" required></div><div><label>Tag / ID *</label><input name="tag" value="${esc(a.tag)}" required></div><div><label>Sex</label><select name="sex"><option ${a.sex==='Female'?'selected':''}>Female</option><option ${a.sex==='Male'?'selected':''}>Male</option></select></div><div><label>DOB</label><input name="dob" type="date" value="${a.dob||''}"></div><div><label>Breed</label><input name="breed" value="${esc(a.breed||'Punganur')}"></div><div><label>Status</label><select name="status">${['Active','Pregnant','Lactating','Dry','Calf','Sold','Deceased'].map(x=>`<option ${a.status===x?'selected':''}>${x}</option>`).join('')}</select></div><div><label>Father / Sire</label><input name="sire" value="${esc(a.sire)}"></div><div><label>Mother / Dam</label><input name="dam" value="${esc(a.dam)}"></div><div><label>Paternal grandfather</label><input name="pgf" value="${esc(a.pgf)}"></div><div><label>Paternal grandmother</label><input name="pgm" value="${esc(a.pgm)}"></div><div><label>Maternal grandfather</label><input name="mgf" value="${esc(a.mgf)}"></div><div><label>Maternal grandmother</label><input name="mgm" value="${esc(a.mgm)}"></div><div><label>Great-grandfather</label><input name="ggf" value="${esc(a.ggf)}"></div><div><label>Great-grandmother</label><input name="ggm" value="${esc(a.ggm)}"></div><div><label>Lactation count</label><input name="lactations" type="number" min="0" value="${a.lactations||0}"></div><div><label>Photo</label><input id="afoto" type="file" accept="image/*"></div><div class="full"><label>Notes</label><textarea name="notes">${esc(a.notes)}</textarea></div></div><button class="primary">Save cattle</button></form>`;af.onsubmit=async e=>{e.preventDefault();let x=Object.fromEntries(new FormData(af));x.id=a.id;x.lactations=+x.lactations||0;let f=afoto.files[0];if(f)x.photo=await readPhoto(f);else if(a.photo)x.photo=a.photo;await put('animals',x);closeD();render()};dlg.showModal()}
-function readPhoto(f){return new Promise(ok=>{let r=new FileReader;r.onload=()=>ok(r.result);r.readAsDataURL(f)})}
-async function profile(id){let a=(await all('animals')).find(x=>x.id===id);modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>${esc(a.name)}</h2>${a.photo?`<img src="${a.photo}" style="width:100%;max-height:260px;object-fit:cover;border-radius:14px">`:''}<div class="grid"><div class="card"><small>Tag</small><b>${esc(a.tag)}</b></div><div class="card"><small>DOB</small><b>${esc(a.dob||'—')}</b></div><div class="card"><small>Father</small><b>${esc(a.sire||'—')}</b></div><div class="card"><small>Mother</small><b>${esc(a.dam||'—')}</b></div></div><h3>Pedigree tree</h3><div class="tree"><div class="node"><b>${esc(a.name)}</b></div><div class="pair"><div class="node">Sire<br><b>${esc(a.sire||'—')}</b><br><small>${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}</small></div><div class="node">Dam<br><b>${esc(a.dam||'—')}</b><br><small>${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</small></div></div></div><button class="primary" onclick='newAnimal(${JSON.stringify(a.sex)},${JSON.stringify(a)})'>Edit</button>`;dlg.showModal()}
-function newBreed(){all('animals').then(a=>{modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>Breeding / AI</h2><form id="bf"><div class="grid"><div><label>Female</label><select name="female">${a.filter(x=>x.sex==='Female').map(x=>`<option value="${x.id}">${esc(x.name)} (${esc(x.tag)})</option>`).join('')}</select></div><div><label>Bull / semen ID</label><input name="bull"></div><div><label>Service date</label><input name="date" type="date"></div><div><label>Method</label><select name="method"><option>AI</option><option>Natural service</option><option>ET</option></select></div><div><label>Pregnancy</label><select name="preg"><option>Pending</option><option>Positive</option><option>Negative</option></select></div><div><label>Expected calving</label><input name="calving" type="date"></div><div class="full"><label>Notes</label><textarea name="notes"></textarea></div></div><button class="primary">Save breeding</button></form>`;bf.onsubmit=async e=>{e.preventDefault();let x=Object.fromEntries(new FormData(bf));x.id=crypto.randomUUID();await put('breeding',x);closeD();render()};dlg.showModal()})}
-function newLact(){all('animals').then(a=>{modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>Lactation</h2><form id="lf"><div class="grid"><div><label>Cow</label><select name="cow">${a.filter(x=>x.sex==='Female').map(x=>`<option value="${x.id}">${esc(x.name)} (${esc(x.tag)})</option>`).join('')}</select></div><div><label>Lactation number</label><input name="no" type="number" min="1" required></div><div><label>Calving date</label><input name="calving" type="date"></div><div><label>Peak L/day</label><input name="peak" type="number" step=".1"></div><div><label>Average L/day</label><input name="avg" type="number" step=".1"></div><div><label>Total milk L</label><input name="total" type="number" step=".1"></div></div><button class="primary">Save</button></form>`;lf.onsubmit=async e=>{e.preventDefault();let x=Object.fromEntries(new FormData(lf));x.id=crypto.randomUUID();await put('lactation',x);closeD();render()};dlg.showModal()})}
-function newHealth(){all('animals').then(a=>{modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>Health / vaccination</h2><form id="hf"><div class="grid"><div><label>Animal</label><select name="animal">${a.map(x=>`<option value="${x.id}">${esc(x.name)} (${esc(x.tag)})</option>`).join('')}</select></div><div><label>Date</label><input name="date" type="date"></div><div><label>Type</label><select name="type"><option>Vaccination</option><option>Deworming</option><option>Treatment</option><option>Observation</option></select></div><div><label>Medicine / vaccine</label><input name="item"></div><div class="full"><label>Notes</label><textarea name="notes"></textarea></div></div><button class="primary">Save</button></form>`;hf.onsubmit=async e=>{e.preventDefault();let x=Object.fromEntries(new FormData(hf));x.id=crypto.randomUUID();await put('health',x);closeD();render()};dlg.showModal()})}
-async function render(){let a=await all('animals');total.textContent=a.length;female.textContent=a.filter(x=>x.sex==='Female').length;male.textContent=a.filter(x=>x.sex==='Male').length;preg.textContent=a.filter(x=>x.status==='Pregnant').length;calf.textContent=a.filter(x=>x.status==='Calf').length;recent.innerHTML=a.slice(-5).reverse().map(card).join('')||'<p class="muted">No cattle yet.</p>';let q=($('search')?.value||'').toLowerCase();herdList.innerHTML=a.filter(x=>JSON.stringify(x).toLowerCase().includes(q)).map(card).join('')||'<div class="card">No matching cattle.</div>';let b=await all('breeding');breedList.innerHTML=b.slice().reverse().map(x=>`<div class="card"><b>${esc(x.bull||'Bull/semen not entered')}</b><div class="muted">${esc(x.date)} • ${esc(x.method)} • ${esc(x.preg)}</div>Expected calving: ${esc(x.calving||'—')}</div>`).join('')||'<div class="card">No breeding records.</div>';let l=await all('lactation');lactList.innerHTML=l.slice().reverse().map(x=>`<div class="card"><b>Lactation ${esc(x.no)}</b><div class="muted">Calving ${esc(x.calving||'—')}</div>Peak ${esc(x.peak||0)} L/day • Average ${esc(x.avg||0)} L/day • Total ${esc(x.total||0)} L</div>`).join('')||'<div class="card">No lactation records.</div>';let h=await all('health');healthList.innerHTML=h.slice().reverse().map(x=>`<div class="card"><b>${esc(x.type)} • ${esc(x.item||'')}</b><div class="muted">${esc(x.date)}</div>${esc(x.notes||'')}</div>`).join('')||'<p class="muted">No health records.</p>'}
-async function backup(){let d={version:6,animals:await all('animals'),breeding:await all('breeding'),lactation:await all('lactation'),health:await all('health')};let u=URL.createObjectURL(new Blob([JSON.stringify(d)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='Punganur-Heritage-V6-backup.json';a.click();URL.revokeObjectURL(u)}
-async function restore(e){try{let d=JSON.parse(await e.target.files[0].text());for(let s of ['animals','breeding','lactation','health'])for(let x of(d[s]||[]))await put(s,x);render();alert('Backup restored')}catch(x){alert('Invalid backup file')}}
-async function wipe(){if(confirm('Delete ALL local records?')){for(let s of ['animals','breeding','lactation','health'])for(let x of await all(s))await db.transaction(s,'readwrite').objectStore(s).delete(x.id);render()}}
-
-function openFamilySearch(){
-  modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🌳 Family Finder</h2>
-  <p class="muted">Enter a bull, cow or calf name/tag to find its recorded parents and grandparents.</p>
-  <input id="famq" placeholder="Name or tag">
-  <button class="primary" style="margin-top:9px" onclick="familyResults()">Find family</button>
-  <div id="famres" style="margin-top:12px"></div>`;dlg.showModal()
-}
-async function familyResults(){
- let q=($('famq').value||'').toLowerCase(), a=(await all('animals')).filter(x=>JSON.stringify(x).toLowerCase().includes(q));
- $('famres').innerHTML=a.map(x=>`<div class="card"><b>${esc(x.name||'Unnamed')}</b><div class="muted">${esc(x.tag||'')}</div>
- <div class="timeline"><div><b>Father / Sire:</b> ${esc(x.sire||'—')}</div><div><b>Mother / Dam:</b> ${esc(x.dam||'—')}</div>
- <div><b>Paternal grandparents:</b> ${esc(x.pgf||'—')} / ${esc(x.pgm||'—')}</div>
- <div><b>Maternal grandparents:</b> ${esc(x.mgf||'—')} / ${esc(x.mgm||'—')}</div></div></div>`).join('')||'<p class="muted">No matching animal.</p>'
-}
-function openSemen(){
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🧬 Semen Register</h2>
- <p class="muted">Use this register for bull ID, semen code, station and straw information.</p>
- <form id="sf"><div class="grid">
- <div><label>Bull name</label><input name="bull" required></div><div><label>Semen code / ID</label><input name="code"></div>
- <div><label>Station</label><input name="station"></div><div><label>Collection year</label><input name="year" type="number"></div>
- <div class="full"><label>Notes</label><textarea name="notes"></textarea></div></div><button class="primary">Save semen entry</button></form><div id="semenList"></div>`;
- sf.onsubmit=async e=>{e.preventDefault();let x=Object.fromEntries(new FormData(sf));x.id=crypto.randomUUID();let s=JSON.parse(localStorage.getItem('phv7semen')||'[]');s.push(x);localStorage.setItem('phv7semen',JSON.stringify(s));renderSemen();sf.reset()};renderSemen();dlg.showModal()
-}
-function renderSemen(){let s=JSON.parse(localStorage.getItem('phv7semen')||'[]');$('semenList').innerHTML='<h3>Saved semen</h3>'+s.slice().reverse().map(x=>`<div class="card"><b>${esc(x.bull)}</b><div class="muted">${esc(x.code||'')} • ${esc(x.station||'')} • ${esc(x.year||'')}</div></div>`).join('')||'<p class="muted">No semen entries.</p>'}
-function openCalf(){
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🐮 Calf Register</h2>
- <p class="muted">Register newborn calves and connect them to the dam and sire.</p>
- <form id="cf"><div class="grid"><div><label>Calf name</label><input name="name" required></div><div><label>Tag</label><input name="tag" required></div>
- <div><label>DOB</label><input name="dob" type="date" required></div><div><label>Sex</label><select name="sex"><option>Female</option><option>Male</option></select></div>
- <div><label>Dam</label><input name="dam"></div><div><label>Sire / semen</label><input name="sire"></div>
- <div class="full"><label>Notes</label><textarea name="notes"></textarea></div></div><button class="primary">Register calf</button></form>`;
- cf.onsubmit=async e=>{e.preventDefault();let x=Object.fromEntries(new FormData(cf));x.id=crypto.randomUUID();x.breed='Punganur';x.status='Calf';x.lactations=0;await put('animals',x);closeD();render()};dlg.showModal()
-}
-async function openMilk(){
- let l=await all('lactation'), total=l.reduce((n,x)=>n+(+x.total||0),0), avg=l.length?l.reduce((n,x)=>n+(+x.avg||0),0)/l.length:0;
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>📈 Milk Summary</h2>
- <div class="v7grid"><div class="metric"><b>${l.length}</b>records</div><div class="metric"><b>${total.toFixed(1)}</b>total L</div><div class="metric"><b>${avg.toFixed(1)}</b>avg L/day</div><div class="metric"><b>${l.reduce((m,x)=>Math.max(m,+x.peak||0),0).toFixed(1)}</b>peak L/day</div></div>
- <div class="timeline">${l.slice().reverse().map(x=>`<div><b>Lactation ${esc(x.no)}</b> • ${esc(x.calving||'')}<br>Peak ${esc(x.peak||0)} • Avg ${esc(x.avg||0)} • Total ${esc(x.total||0)} L</div>`).join('')||'<p class="muted">No milk records yet.</p>'}</div>`;
- dlg.showModal()
-}
-
-
-async function openAnimal360(){
- let a=await all('animals');
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🐄 Animal 360°</h2>
- <p class="muted">Select an animal to view its complete profile.</p>
- <select id="a360">${a.map(x=>`<option value="${x.id}">${esc(x.name||'Unnamed')} — ${esc(x.tag||'')}</option>`).join('')}</select>
- <button class="primary" style="margin-top:9px" onclick="animal360Selected()">Open complete profile</button>`;
- dlg.showModal()
-}
-async function animal360Selected(){
- let id=$('a360').value,a=(await all('animals')).find(x=>x.id===id),b=await all('breeding'),l=await all('lactation'),h=await all('health');
- let br=b.filter(x=>x.female===id),la=l.filter(x=>x.cow===id),he=h.filter(x=>x.animal===id);
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🐄 ${esc(a.name)}</h2>
- ${a.photo?`<img src="${a.photo}" style="width:100%;max-height:250px;object-fit:cover;border-radius:15px">`:''}
- <div class="v7grid"><div class="metric"><b>${esc(a.tag||'—')}</b>Tag</div><div class="metric"><b>${esc(a.dob||'—')}</b>DOB</div><div class="metric"><b>${a.lactations||0}</b>Lactations</div><div class="metric"><b>${esc(a.status||'—')}</b>Status</div></div>
- <h3>Pedigree</h3><div class="timeline"><div><b>Father:</b> ${esc(a.sire||'—')}</div><div><b>Mother:</b> ${esc(a.dam||'—')}</div><div><b>PGF / PGM:</b> ${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}</div><div><b>MGF / MGM:</b> ${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</div></div>
- <h3>Breeding history (${br.length})</h3>${br.map(x=>`<div class="card">${esc(x.date||'')} • ${esc(x.method||'')} • ${esc(x.bull||'')} • Pregnancy: ${esc(x.preg||'Pending')}</div>`).join('')||'<p class="muted">No breeding records.</p>'}
- <h3>Lactation history (${la.length})</h3>${la.map(x=>`<div class="card">L${esc(x.no)} • Calving ${esc(x.calving||'—')} • Avg ${esc(x.avg||0)} L/day • Total ${esc(x.total||0)} L</div>`).join('')||'<p class="muted">No lactation records.</p>'}
- <h3>Health history (${he.length})</h3>${he.map(x=>`<div class="card">${esc(x.date||'')} • ${esc(x.type||'')} • ${esc(x.item||'')}</div>`).join('')||'<p class="muted">No health records.</p>'}`;
-}
-async function openBreedingTimeline(){
- let a=await all('animals'),b=await all('breeding');
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🧬 Breeding Timeline</h2><select id="btcow">${a.filter(x=>x.sex==='Female').map(x=>`<option value="${x.id}">${esc(x.name)} — ${esc(x.tag)}</option>`).join('')}</select><button class="primary" style="margin-top:9px" onclick="showBreedingTimeline()">Show timeline</button><div id="btres" class="timeline" style="margin-top:12px"></div>`;dlg.showModal()
-}
-async function showBreedingTimeline(){
- let id=$('btcow').value,b=(await all('breeding')).filter(x=>x.female===id).sort((a,b)=>(a.date||'').localeCompare(b.date||''));
- $('btres').innerHTML=b.map(x=>`<div><b>${esc(x.date||'No date')}</b><br>${esc(x.method||'')} with <b>${esc(x.bull||'Bull/semen')}</b><br>Pregnancy: ${esc(x.preg||'Pending')}<br>Expected calving: ${esc(x.calving||'—')}</div>`).join('')||'<p class="muted">No breeding records.</p>'
-}
-async function openCalfTree(){
- let a=await all('animals');
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🌳 Calf Family Tree</h2><p class="muted">Select a calf to see its parents and grandparents.</p><select id="calfsel">${a.filter(x=>x.status==='Calf').map(x=>`<option value="${x.id}">${esc(x.name)} — ${esc(x.tag)}</option>`).join('')}</select><button class="primary" style="margin-top:9px" onclick="showCalfTree()">Show tree</button><div id="ctres" style="margin-top:12px"></div>`;dlg.showModal()
-}
-async function showCalfTree(){
- let a=(await all('animals')).find(x=>x.id===$('calfsel').value);
- $('ctres').innerHTML=a?`<div class="tree"><div class="node"><b>${esc(a.name)}</b><br>Calf</div><div class="pair"><div class="node">Sire<br><b>${esc(a.sire||'—')}</b><br>${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}</div><div class="node">Dam<br><b>${esc(a.dam||'—')}</b><br>${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</div></div></div>`:'<p class="muted">No calf selected.</p>'
-}
-async function openHerdReport(){
- let a=await all('animals'),b=await all('breeding'),l=await all('lactation'),h=await all('health');
- let females=a.filter(x=>x.sex==='Female').length,males=a.filter(x=>x.sex==='Male').length,preg=a.filter(x=>x.status==='Pregnant').length,calves=a.filter(x=>x.status==='Calf').length;
- let milk=l.reduce((n,x)=>n+(+x.total||0),0);
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>📊 Herd Report</h2><div class="v7grid">
- <div class="metric"><b>${a.length}</b>Total cattle</div><div class="metric"><b>${females}</b>Females</div><div class="metric"><b>${males}</b>Males</div><div class="metric"><b>${preg}</b>Pregnant</div><div class="metric"><b>${calves}</b>Calves</div><div class="metric"><b>${b.length}</b>Breeding records</div><div class="metric"><b>${l.length}</b>Lactation records</div><div class="metric"><b>${milk.toFixed(1)} L</b>Milk recorded</div></div>
- <h3>Data completeness</h3><div class="timeline"><div>DOB entered: ${a.filter(x=>x.dob).length}/${a.length}</div><div>Father entered: ${a.filter(x=>x.sire).length}/${a.length}</div><div>Mother entered: ${a.filter(x=>x.dam).length}/${a.length}</div><div>Photos: ${a.filter(x=>x.photo).length}/${a.length}</div><div>Health records: ${h.length}</div></div>`;
-}
-
-
-function v9days(date){if(!date)return null;return Math.floor((Date.now()-new Date(date).getTime())/86400000)}
-async function openRepro(){
- let a=await all('animals'),f=a.filter(x=>x.sex==='Female');
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🤰 Reproductive Cycle</h2>
- <select id="rCow">${f.map(x=>`<option value="${x.id}">${esc(x.name)} — ${esc(x.tag)}</option>`).join('')}</select>
- <button class="primary" style="margin-top:9px" onclick="showRepro()">Analyze</button><div id="rOut" style="margin-top:12px"></div>`;dlg.showModal()
-}
-async function showRepro(){
- let id=$('rCow').value,a=(await all('animals')).find(x=>x.id===id),b=(await all('breeding')).filter(x=>x.female===id).sort((x,y)=>(y.date||'').localeCompare(x.date||'')),l=(await all('lactation')).filter(x=>x.cow===id);
- let last=b[0],days=last?.date?v9days(last.date):null;
- $('rOut').innerHTML=`<div class="v7grid"><div class="metric"><b>${b.length}</b>Services</div><div class="metric"><b>${l.length}</b>Lactations</div><div class="metric"><b>${days??'—'}</b>days since service</div><div class="metric"><b>${esc(a.status||'—')}</b>Status</div></div>
- <div class="timeline">${last?`<div><b>Last service:</b> ${esc(last.date||'—')}<br>Method: ${esc(last.method||'—')}<br>Bull/semen: ${esc(last.bull||'—')}<br>Pregnancy: ${esc(last.preg||'Pending')}<br>Expected calving: ${esc(last.calving||'—')}</div>`:'<div>No breeding service recorded.</div>'}
- <div><b>Recommendation</b><br>${last?.preg==='Positive'?'Pregnancy recorded positive — monitor expected calving and prepare calving records.':last?.preg==='Negative'?'Last pregnancy recorded negative — consider next breeding plan.':'Pregnancy result is pending — update after confirmation.'}</div></div>`
-}
-async function openLineage(){
- let a=await all('animals');
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🧬 Lineage Explorer</h2>
- <select id="lin">${a.map(x=>`<option value="${x.id}">${esc(x.name||'Unnamed')} — ${esc(x.tag||'')}</option>`).join('')}</select>
- <button class="primary" style="margin-top:9px" onclick="showLineage()">Explore lineage</button><div id="linOut" style="margin-top:12px"></div>`;dlg.showModal()
-}
-async function showLineage(){
- let a=(await all('animals')).find(x=>x.id===$('lin').value);
- $('linOut').innerHTML=`<div class="tree"><div class="node"><b>${esc(a.name||'Unnamed')}</b><br>${esc(a.tag||'')}</div><div class="pair">
- <div class="node"><b>Sire</b><br>${esc(a.sire||'—')}<br><small>${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}</small></div>
- <div class="node"><b>Dam</b><br>${esc(a.dam||'—')}<br><small>${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</small></div></div></div>`
-}
-async function openCalving(){
- let b=await all('breeding'),a=await all('animals'),items=b.filter(x=>x.calving).sort((x,y)=>(x.calving||'').localeCompare(y.calving||''));
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>📅 Calving Planner</h2>
- <p class="muted">Upcoming expected calving dates from your breeding records.</p>
- <div class="timeline">${items.map(x=>{let cow=a.find(c=>c.id===x.female);return `<div><b>${esc(x.calving)}</b><br>Cow: ${esc(cow?.name||'Unknown')} (${esc(cow?.tag||'')})<br>Bull/semen: ${esc(x.bull||'—')}<br>Pregnancy: ${esc(x.preg||'Pending')}</div>`}).join('')||'<div>No expected calving dates recorded.</div>'}</div>`;dlg.showModal()
-}
-async function openDashboard9(){
- let a=await all('animals'),b=await all('breeding'),l=await all('lactation');
- let pos=b.filter(x=>x.preg==='Positive').length,pend=b.filter(x=>x.preg==='Pending').length,neg=b.filter(x=>x.preg==='Negative').length;
- let milk=l.reduce((n,x)=>n+(+x.total||0),0),avg=l.length?l.reduce((n,x)=>n+(+x.avg||0),0)/l.length:0;
- let pregnancyRate=(pos+neg)?(100*pos/(pos+neg)).toFixed(1):'—';
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>📊 Breeding Dashboard</h2>
- <div class="v7grid"><div class="metric"><b>${b.length}</b>Services</div><div class="metric"><b>${pos}</b>Positive</div><div class="metric"><b>${pend}</b>Pending</div><div class="metric"><b>${pregnancyRate}%</b>Pregnancy rate</div><div class="metric"><b>${a.filter(x=>x.status==='Calf').length}</b>Calves</div><div class="metric"><b>${milk.toFixed(1)} L</b>Milk recorded</div><div class="metric"><b>${avg.toFixed(1)} L/day</b>Avg milk</div><div class="metric"><b>${a.length}</b>Animals</div></div>
- <h3>Management view</h3><div class="timeline"><div>Review cows with pending pregnancy results.</div><div>Check upcoming expected calving dates.</div><div>Keep sire/semen IDs complete for pedigree accuracy.</div><div>Update calf registration immediately after birth.</div></div>`
-}
-
-
-async function openAlerts10(){
- let b=await all('breeding'),a=await all('animals'),now=new Date();
- let upcoming=b.filter(x=>x.calving).map(x=>({...x,d:new Date(x.calving)})).filter(x=>x.d>=now).sort((x,y)=>x.d-y.d).slice(0,15);
- let pending=b.filter(x=>x.preg==='Pending');
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🔔 Herd Alerts</h2>
- <div class="timeline"><div><b>Pregnancy checks pending: ${pending.length}</b><br>Update pregnancy results after confirmation.</div>
- ${upcoming.map(x=>{let c=a.find(q=>q.id===x.female);return `<div><b>Expected calving: ${esc(x.calving)}</b><br>${esc(c?.name||'Unknown')} • ${esc(c?.tag||'')}<br>Bull/semen: ${esc(x.bull||'—')}</div>`}).join('')||'<div>No upcoming expected calving dates.</div>'}</div>`;dlg.showModal()
-}
-async function openBullStats10(){
- let b=await all('breeding'),l=await all('lactation');
- let m={};b.forEach(x=>{let k=x.bull||'Not entered';m[k]??={services:0,pos:0,neg:0};m[k].services++;if(x.preg==='Positive')m[k].pos++;if(x.preg==='Negative')m[k].neg++});
- let milk=l.reduce((n,x)=>n+(+x.total||0),0);
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🐂 Bull Performance</h2><p class="muted">Performance is based only on breeding records entered in the app.</p>
- ${Object.entries(m).sort((a,b)=>b[1].services-a[1].services).map(([k,v])=>{let rate=v.pos+v.neg?((100*v.pos)/(v.pos+v.neg)).toFixed(1):'—';return `<div class="card"><b>${esc(k)}</b><div class="muted">Services: ${v.services} • Positive: ${v.pos} • Negative: ${v.neg} • Pregnancy rate: ${rate}%</div></div>`}).join('')||'<p class="muted">No breeding records.</p>'}
- <div class="card"><b>Total recorded milk:</b> ${milk.toFixed(1)} L</div>`;dlg.showModal()
-}
-async function openCowReport10(){
- let a=await all('animals');
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>📄 Animal Report</h2><select id="repCow">${a.map(x=>`<option value="${x.id}">${esc(x.name||'Unnamed')} — ${esc(x.tag||'')}</option>`).join('')}</select>
- <button class="primary" style="margin-top:9px" onclick="generateReport10()">Generate report</button><div id="repOut" style="margin-top:12px"></div>`;dlg.showModal()
-}
-async function generateReport10(){
- let a=(await all('animals')).find(x=>x.id===$('repCow').value),b=(await all('breeding')).filter(x=>x.female===a.id),l=(await all('lactation')).filter(x=>x.cow===a.id),h=(await all('health')).filter(x=>x.animal===a.id);
- $('repOut').innerHTML=`<div class="card"><h3>${esc(a.name||'Unnamed')}</h3><b>Tag:</b> ${esc(a.tag||'—')}<br><b>DOB:</b> ${esc(a.dob||'—')}<br><b>Sex:</b> ${esc(a.sex||'—')}<br><b>Status:</b> ${esc(a.status||'—')}<br><b>Lactations:</b> ${a.lactations||0}</div>
- <div class="card"><h3>Pedigree</h3>Father: ${esc(a.sire||'—')}<br>Mother: ${esc(a.dam||'—')}<br>PGF/PGM: ${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}<br>MGF/MGM: ${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</div>
- <div class="card"><h3>Records</h3>Breeding: ${b.length}<br>Lactation: ${l.length}<br>Health: ${h.length}</div>
- <button class="secondary" onclick="printAnimal10()">🖨️ Print / Save PDF</button>`;
- window._reportAnimal=a
-}
-function printAnimal10(){let a=window._reportAnimal;if(!a)return;let w=window.open('','_blank');w.document.write(`<html><head><title>Punganur Animal Report</title><style>body{font-family:Arial;padding:30px}h1{color:#174f36}.box{border:1px solid #ddd;padding:15px;border-radius:10px;margin:10px 0}</style></head><body><h1>Punganur Heritage — Animal Report</h1><div class="box"><h2>${esc(a.name||'Unnamed')}</h2><b>Tag:</b> ${esc(a.tag||'—')}<br><b>DOB:</b> ${esc(a.dob||'—')}<br><b>Sex:</b> ${esc(a.sex||'—')}<br><b>Status:</b> ${esc(a.status||'—')}</div><div class="box"><h3>Pedigree</h3>Father: ${esc(a.sire||'—')}<br>Mother: ${esc(a.dam||'—')}<br>PGF/PGM: ${esc(a.pgf||'—')} / ${esc(a.pgm||'—')}<br>MGF/MGM: ${esc(a.mgf||'—')} / ${esc(a.mgm||'—')}</div><p>Generated by Punganur Heritage V12</p></body></html>`);w.document.close();w.print()}
-async function openGeneration10(){
- let a=await all('animals');
- let by={};a.forEach(x=>{let k=x.dob?new Date(x.dob).getFullYear():'Unknown';by[k]=(by[k]||0)+1});
- let sorted=Object.entries(by).sort((x,y)=>String(x[0]).localeCompare(String(y[0])));
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🌳 Generation Overview</h2>
- <p class="muted">A quick view of animals grouped by birth year. For true pedigree generations, keep sire and dam links complete.</p>
- ${sorted.map(([y,n])=>`<div class="card"><b>${esc(y)}</b><div class="muted">${n} animal${n===1?'':'s'}</div></div>`).join('')||'<p class="muted">No animals recorded.</p>'}`;dlg.showModal()
-}
-
-
-/* ================= V11 DATA INTEGRITY ================= */
-function norm11(v){return String(v??'').trim().toLowerCase()}
-function uid11(){return (crypto&&crypto.randomUUID)?crypto.randomUUID():'id-'+Date.now()+'-'+Math.random().toString(16).slice(2)}
-async function animal11(id){return (await all('animals')).find(x=>x.id===id)}
-
-async function duplicateAnimal11(x,excludeId=''){
- const aa=await all('animals'), tag=norm11(x.tag||x.id), name=norm11(x.name), dob=norm11(x.dob);
- return aa.filter(a=>a.id!==excludeId && ((tag&&norm11(a.tag||a.id)===tag)||(name&&dob&&norm11(a.name)===name&&norm11(a.dob)===dob)))
-}
-
-async function saveAnimalV11(x,editingId=''){
- x.id=editingId||x.id||uid11(); x.tag=String(x.tag||x.id).trim();
- if(!x.tag) throw new Error('Animal Tag / ID is required.');
- const dup=await duplicateAnimal11(x,editingId);
- if(dup.length) throw new Error('Duplicate animal detected. Tag/ID already exists: '+dup.map(d=>(d.name||'Unnamed')+' ('+(d.tag||d.id)+')').join(', '));
- const old=editingId?await animal11(editingId):null;
- x.createdAt=old?.createdAt||x.createdAt||new Date().toISOString();
- x.updatedAt=new Date().toISOString(); x.schemaVersion=11;
- await put('animals',x); return x;
-}
-
-async function deleteStore11(store,id){
- await db.transaction(store,'readwrite').objectStore(store).delete(id)
-}
-
-async function deleteAnimalV11(id){
- const a=await animal11(id); if(!a)return;
- if(!confirm(`Move ${a.name||'this animal'} (${a.tag||a.id}) to Recycle Bin?`))return;
- const trash=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');
- const bundle={deletedAt:new Date().toISOString(),animal:a,linked:{}};
- for(const store of ['breeding','lactation','health']){
-   bundle.linked[store]=(await all(store)).filter(r=>r.animal===id||r.cow===id||r.female===id||r.animalId===id||r.cowId===id);
-   for(const r of bundle.linked[store]) await deleteStore11(store,r.id);
- }
- trash.push(bundle); localStorage.setItem('punganurV11Trash',JSON.stringify(trash));
- await deleteStore11('animals',id); closeD(); render();
- alert('Moved to Recycle Bin. It can be restored.')
-}
-
-async function scanDuplicates11(show=true){
- const aa=await all('animals'),groups={};
- aa.forEach(a=>{const k=norm11(a.tag||a.id);if(k)(groups[k]??=[]).push(a)});
- const d=Object.values(groups).filter(g=>g.length>1);
- if(show){
-   modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🔍 Duplicate Scan</h2>`+
-   (d.length?d.map(g=>`<div class="warn11"><b>Duplicate Tag/ID: ${esc(g[0].tag||g[0].id)}</b><br>${g.map(x=>esc(x.name||'Unnamed')+' — '+esc(x.tag||x.id)).join('<br>')}</div>`).join(''):'<div class="card">✅ No duplicate Tags/IDs found.</div>');
-   dlg.showModal()
- }
- return d
-}
-
-async function openDataManager11(){
- const aa=await all('animals'),trash=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🛡️ V11 Data Manager</h2>
- <div class="v7grid"><div class="metric"><b>${aa.length}</b>Animals</div><div class="metric"><b>${trash.length}</b>Recycle Bin</div></div>
- <div class="card"><button class="primary" onclick="scanDuplicates11()">🔍 Scan duplicates</button>
- <button class="secondary" onclick="openRecycle11()">♻️ Recycle Bin</button></div>
- <div class="card"><b>Safe record handling</b><p class="muted">Editing updates the existing animal. Saving a duplicate Tag/ID is blocked.</p>
- <button class="secondary" onclick="exportV11Backup()">💾 Backup now</button></div>`;
- dlg.showModal()
-}
-
-async function openRecycle11(){
- const t=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>♻️ Recycle Bin</h2>`+
- (t.length?t.slice().reverse().map((b,i)=>{const ix=t.length-1-i;return `<div class="card"><b>${esc(b.animal.name||'Unnamed')}</b> — ${esc(b.animal.tag||b.animal.id)}<div class="small11">Deleted ${esc(b.deletedAt)}</div>
- <button class="primary" onclick="restoreTrash11(${ix})">Restore</button><button class="danger" onclick="purgeTrash11(${ix})">Permanently delete</button></div>`}).join(''):'<p class="muted">Recycle Bin is empty.</p>');
- dlg.showModal()
-}
-
-async function restoreTrash11(index){
- const t=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]'),b=t[index];if(!b)return;
- const dup=await duplicateAnimal11(b.animal,'');if(dup.length){alert('Cannot restore: Tag/ID already exists.');return}
- await put('animals',b.animal);
- for(const [store,rs] of Object.entries(b.linked||{}))for(const r of rs)await put(store,r);
- t.splice(index,1);localStorage.setItem('punganurV11Trash',JSON.stringify(t));closeD();render();alert('Restored successfully.')
-}
-function purgeTrash11(index){
- const t=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');if(!t[index])return;
- if(!confirm('Permanently delete this record? This cannot be undone.'))return;
- t.splice(index,1);localStorage.setItem('punganurV11Trash',JSON.stringify(t));openRecycle11()
-}
-
-async function exportV11Backup(){
- const stores=['animals','breeding','lactation','health'],data={app:'Punganur Heritage',version:'V11',exportedAt:new Date().toISOString(),stores:{}};
- for(const s of stores)data.stores[s]=await all(s);
- data.trash=JSON.parse(localStorage.getItem('punganurV11Trash')||'[]');
- const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
- a.href=url;a.download='punganur-heritage-v11-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)
-}
-
-async function editAnimal11(id){
- const x=await animal11(id);if(!x)return;
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>✏️ Edit Animal</h2>
- <div class="grid">
- <div><label>Name</label><input id="e11name" value="${esc(x.name||'')}"></div>
- <div><label>Tag / Animal ID</label><input id="e11tag" value="${esc(x.tag||x.id)}"></div>
- <div><label>Sex</label><select id="e11sex"><option ${x.sex==='Female'?'selected':''}>Female</option><option ${x.sex==='Male'?'selected':''}>Male</option></select></div>
- <div><label>DOB</label><input id="e11dob" type="date" value="${esc(x.dob||'')}"></div>
- <div><label>Sire / Father</label><input id="e11sire" value="${esc(x.sire||x.father||'')}"></div>
- <div><label>Dam / Mother</label><input id="e11dam" value="${esc(x.dam||x.mother||'')}"></div>
- <div><label>Breed</label><input id="e11breed" value="${esc(x.breed||'Punganur')}"></div></div>
- <button class="primary" onclick="saveEdit11('${id}')">Save Changes</button>
- <button class="danger" onclick="deleteAnimalV11('${id}')">Delete</button>`;
- dlg.showModal()
-}
-async function saveEdit11(id){
- const old=await animal11(id),x={...old,name:$('e11name').value.trim()||'Unnamed',tag:$('e11tag').value.trim(),sex:$('e11sex').value,dob:$('e11dob').value,sire:$('e11sire').value.trim(),dam:$('e11dam').value.trim(),breed:$('e11breed').value.trim()||'Punganur'};
- try{await saveAnimalV11(x,id);closeD();render();alert('Animal updated successfully.')}catch(e){alert(e.message)}
-}
-
-async function openV11CattleManager(){
- modal.innerHTML=`<button class="close" onclick="closeD()">×</button><h2>🐄 Cattle Register V11</h2>
- <input id="v11search" placeholder="Search name, tag, sire or dam" oninput="renderV11Cattle()"><div id="v11cattle"></div>`;
- dlg.showModal();renderV11Cattle()
-}
-async function renderV11Cattle(){
- const q=norm11($('v11search')?.value||''),aa=(await all('animals')).filter(x=>!q||[x.name,x.tag,x.sire,x.dam,x.dob].some(v=>norm11(v).includes(q)));
- $('v11cattle').innerHTML=aa.map(x=>`<div class="card"><b>${esc(x.name||'Unnamed')}</b> <span class="tag">${esc(x.tag||x.id)}</span><div class="small11">${esc(x.sex||'')} • DOB ${esc(x.dob||'—')} • Sire ${esc(x.sire||'—')} • Dam ${esc(x.dam||'—')}</div>
- <button class="primary" onclick="editAnimal11('${x.id}')">Edit</button><button class="danger" onclick="deleteAnimalV11('${x.id}')">Delete</button></div>`).join('')||'<p class="muted">No cattle found.</p>'
-}
-
-
-/* ================= V12 ROBUST RECORD MANAGEMENT ================= */
-function v12Esc(v){
-  return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-}
-function v12Norm(v){return String(v??'').trim().toLowerCase()}
-async function v12Get(id){return (await all('animals')).find(x=>String(x.id)===String(id))}
-async function v12Open(html){
-  const d=document.getElementById('dlg')||document.querySelector('dialog');
-  const m=document.getElementById('modal')||d?.querySelector('.modal')||d;
-  if(!d||!m){alert('Record manager UI is unavailable. Please reload the app.');return false}
-  m.innerHTML=html;
-  if(typeof d.showModal==='function') d.showModal(); else d.setAttribute('open','');
-  return true;
-}
-function v12Close(){
-  const d=document.getElementById('dlg')||document.querySelector('dialog');
-  if(d?.close) d.close(); else d?.removeAttribute('open');
-}
-
-async function v12Edit(id){
-  const a=await v12Get(id);
-  if(!a){alert('Record not found.');return}
-  await v12Open(`<button class="close" onclick="v12Close()">×</button>
-  <h2>✏️ Edit Cattle Record</h2>
-  <div class="grid">
-  <label>Name<input id="v12name" value="${v12Esc(a.name||'')}"></label>
-  <label>Tag / Animal ID<input id="v12tag" value="${v12Esc(a.tag||a.id)}"></label>
-  <label>Sex<select id="v12sex"><option value="Female" ${a.sex==='Female'?'selected':''}>Female</option><option value="Male" ${a.sex==='Male'?'selected':''}>Male</option></select></label>
-  <label>Date of Birth<input id="v12dob" type="date" value="${v12Esc(a.dob||'')}"></label>
-  <label>Sire / Father<input id="v12sire" value="${v12Esc(a.sire||a.father||'')}"></label>
-  <label>Dam / Mother<input id="v12dam" value="${v12Esc(a.dam||a.mother||'')}"></label>
-  <label>Breed<input id="v12breed" value="${v12Esc(a.breed||'Punganur')}"></label>
-  </div>
-  <div style="margin-top:14px">
-  <button class="primary" id="v12save">💾 Save Changes</button>
-  <button class="danger" id="v12delete">🗑️ Delete Record</button>
-  </div>`);
-
-  document.getElementById('v12save').onclick=async()=>{
-    const x={...a,name:document.getElementById('v12name').value.trim()||'Unnamed',
-      tag:document.getElementById('v12tag').value.trim(),sex:document.getElementById('v12sex').value,
-      dob:document.getElementById('v12dob').value,sire:document.getElementById('v12sire').value.trim(),
-      dam:document.getElementById('v12dam').value.trim(),breed:document.getElementById('v12breed').value.trim()||'Punganur',
-      updatedAt:new Date().toISOString()};
-    if(!x.tag){alert('Tag / Animal ID is required.');return}
-    const dup=(await all('animals')).find(q=>q.id!==a.id&&v12Norm(q.tag)===v12Norm(x.tag));
-    if(dup){alert('Cannot save: this Tag / Animal ID already belongs to '+(dup.name||'another animal')+'.');return}
-    await put('animals',x);v12Close();if(typeof render==='function')render();alert('Record updated successfully.');
-  };
-  document.getElementById('v12delete').onclick=()=>v12Delete(id);
-}
-
-async function v12Delete(id){
-  const a=await v12Get(id);if(!a){alert('Record not found.');return}
-  if(!confirm(`Delete "${a.name||'Unnamed'}" (${a.tag||a.id})?\n\nThe record will be moved to the Recycle Bin.`))return;
-  const trash=JSON.parse(localStorage.getItem('punganurV12Trash')||'[]');
-  const linked={};
-  for(const store of ['breeding','lactation','health']){
-    linked[store]=(await all(store)).filter(r=>[r.animal,r.cow,r.female,r.animalId,r.cowId].some(v=>String(v)===String(id)));
-    for(const r of linked[store]) await db.transaction(store,'readwrite').objectStore(store).delete(r.id);
-  }
-  trash.push({deletedAt:new Date().toISOString(),animal:a,linked});
-  localStorage.setItem('punganurV12Trash',JSON.stringify(trash));
-  await db.transaction('animals','readwrite').objectStore('animals').delete(id);
-  v12Close();if(typeof render==='function')render();alert('Record deleted and moved to Recycle Bin.');
-}
-
-async function v12Manager(){
-  await v12Open(`<button class="close" onclick="v12Close()">×</button><h2>🐄 V12 Cattle Record Manager</h2>
-  <input id="v12search" placeholder="Search name / Tag / sire / dam">
-  <div id="v12rows"></div>`);
-  document.getElementById('v12search').oninput=v12Rows;
-  v12Rows();
-}
-async function v12Rows(){
-  const q=v12Norm(document.getElementById('v12search')?.value||'');
-  const aa=(await all('animals')).filter(a=>!q||[a.name,a.tag,a.sire,a.dam,a.dob].some(v=>v12Norm(v).includes(q)));
-  document.getElementById('v12rows').innerHTML=aa.map(a=>`<div class="card" style="margin-top:10px">
-  <b>${v12Esc(a.name||'Unnamed')}</b><br><span class="small11">Tag: ${v12Esc(a.tag||a.id)} • DOB: ${v12Esc(a.dob||'—')}</span><br>
-  <button class="primary v12-edit" data-id="${v12Esc(a.id)}">✏️ EDIT</button>
-  <button class="danger v12-del" data-id="${v12Esc(a.id)}">🗑️ DELETE</button>
-  </div>`).join('')||'<p class="muted">No cattle records found.</p>';
-  document.querySelectorAll('.v12-edit').forEach(b=>b.onclick=()=>v12Edit(b.dataset.id));
-  document.querySelectorAll('.v12-del').forEach(b=>b.onclick=()=>v12Delete(b.dataset.id));
-}
-
-if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});init().then(render);
-</script></body></html>
+const TYPES=['cattle','breeding','calves','lactation','health','bulls','semen'];
+const labels={cattle:'Cattle',breeding:'Breeding',calves:'Calf',lactation:'Lactation',health:'Health Record',bulls:'Bull',semen:'Semen Straw'};
+const fields={
+cattle:[['id','Animal ID / Tag','text',1],['name','Name','text',1],['sex','Sex','select',1,'Female|Male'],['dob','Date of Birth','date'],['breed','Breed','text'],['colour','Colour','text'],['status','Status','select',0,'Active|Sold|Transferred|Dead'],['sire','Father / Sire','text'],['dam','Mother / Dam','text'],['notes','Notes','textarea']],
+breeding:[['cowId','Cow ID / Tag','text',1],['serviceDate','Service Date','date',1],['type','Service Type','select',0,'AI|Natural'],['bull','Bull ID / Name','text'],['straw','Semen Straw ID','text'],['pregDate','Pregnancy Check','date'],['pregResult','Pregnancy Result','select',0,'Pregnant|Not Pregnant|Recheck'],['expectedCalving','Expected Calving','date'],['actualCalving','Actual Calving','date'],['calfId','Calf ID','text'],['notes','Notes','textarea']],
+calves:[['id','Calf ID / Tag','text',1],['name','Name','text'],['sex','Sex','select',1,'Female|Male'],['dob','Date of Birth','date',1],['birthWeight','Birth Weight','number'],['dam','Mother / Dam','text'],['sire','Father / Sire','text'],['birthType','Birth Type','select',0,'Single|Twin'],['notes','Notes','textarea']],
+lactation:[['cowId','Cow ID / Tag','text',1],['number','Lactation Number','number',1],['calvingDate','Calving Date','date'],['start','Start Date','date'],['end','End Date','date'],['dryOff','Dry-off Date','date'],['peak','Peak Milk (L)','number'],['average','Average Daily Milk (L)','number'],['total','Total Milk (L)','number'],['notes','Notes','textarea']],
+health:[['animalId','Animal ID / Tag','text',1],['date','Date','date',1],['category','Category','select',0,'Vaccination|Deworming|Disease|Treatment|Vet Visit|Other'],['problem','Problem / Diagnosis','text'],['medicine','Medicine / Treatment','text'],['dose','Dose','text'],['followUp','Follow-up Date','date'],['status','Status','select',0,'Open|Recovered|Completed'],['notes','Notes','textarea']],
+bulls:[['id','Bull ID / Tag','text',1],['name','Name','text',1],['dob','Date of Birth','date'],['breed','Breed','text'],['sire','Father / Sire','text'],['dam','Mother / Dam','text'],['status','Status','select',0,'Active|Retired|Sold|Dead'],['notes','Notes','textarea']],
+semen:[['strawId','Straw ID / Number','text',1],['bullId','Bull ID / Name','text',1],['source','Source / Station','text'],['collectionDate','Collection Date','date'],['batch','Batch Number','text'],['tank','LN2 Tank','text'],['canister','Canister','text'],['position','Position','text'],['quantity','Number of Straws','number'],['used','Used Straws','number'],['notes','Notes','textarea']]
+};
+let db=JSON.parse(localStorage.getItem('punganur_cattles_v1')||'{"cattle":[],"breeding":[],"calves":[],"lactation":[],"health":[],"bulls":[],"semen":[],"recycle":[]}');
+let editState=null;
+function saveDB(){localStorage.setItem('punganur_cattles_v1',JSON.stringify(db));updateDashboard();TYPES.forEach(t=>renderList(t));renderRecycle();renderReports();renderPedigree();}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function toast(s){let x=document.getElementById('toast');x.textContent=s;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
+function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.bottom button').forEach(b=>b.classList.toggle('active',b.dataset.v===id));if(id==='cattle'||id==='breeding'||id==='calves'||id==='lactation'||id==='health'||id==='bulls'||id==='semen'){renderList(id)}if(id==='recycle')renderRecycle();if(id==='reports')renderReports();if(id==='pedigree')renderPedigree();window.scrollTo(0,0)}
+function updateDashboard(){sTotal.textContent=db.cattle.filter(x=>x.status!=='Dead'&&x.status!=='Sold').length;sCows.textContent=db.cattle.filter(x=>x.sex==='Female'&&x.status!=='Dead'&&x.status!=='Sold').length;sBulls.textContent=db.bulls.length+db.cattle.filter(x=>x.sex==='Male'&&x.status!=='Dead'&&x.status!=='Sold').length;sCalves.textContent=db.calves.length}
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function renderList(type,q=''){let el=document.getElementById(type+'List');if(!el)return;let arr=db[type]||[];q=(q||'').toLowerCase();if(q)arr=arr.filter(r=>JSON.stringify(r).toLowerCase().includes(q));if(!arr.length){el.innerHTML='<div class="list-empty">No records yet.</div>';return}el.innerHTML=arr.map(r=>card(type,r)).join('')}
+function card(type,r){let title=r.name||r.id||r.strawId||r.cowId||r.animalId||'Record';let sub= type==='cattle'?`${r.id||''} • ${r.sex||''} • ${r.breed||''}`:type==='breeding'?`${r.cowId||''} • ${r.serviceDate||''} • ${r.pregResult||''}`:type==='calves'?`${r.id||''} • ${r.sex||''} • ${r.dob||''}`:type==='lactation'?`${r.cowId||''} • Lactation ${r.number||''}`:type==='health'?`${r.animalId||''} • ${r.category||''} • ${r.date||''}`:type==='bulls'?`${r.id||''} • ${r.breed||''}`:`${r.bullId||''} • ${r.strawId||''} • ${r.quantity||0} straws`;return `<div class="card"><div class="row between"><div><b>${esc(title)}</b><div class="muted">${esc(sub)}</div></div><span class="pill">${labels[type]}</span></div><div class="form-actions"><button class="btn secondary" onclick="openForm('${type}','${r._id}')">✏️ Edit</button><button class="btn secondary" onclick="openProfile('${type}','${r._id}')">📋 View</button><button class="btn danger" onclick="deleteRecord('${type}','${r._id}')">🗑️ Delete</button></div></div>`}
+function openForm(type,id=null){editState={type,id};let r=id?(db[type]||[]).find(x=>x._id===id):{};document.getElementById('modalTitle').textContent=(id?'Edit ':'Add ')+labels[type];let html='<div class="form">';for(const f of fields[type]){let [k,l,t,req,opts]=f;let v=r[k]??'';html+=`<div><label>${l}${req?' *':''}</label>`+(t==='select'?`<select id="f_${k}"><option value="">Select</option>${opts.split('|').map(o=>`<option ${v===o?'selected':''}>${o}</option>`).join('')}</select>`:t==='textarea'?`<textarea id="f_${k}">${esc(v)}</textarea>`:`<input id="f_${k}" type="${t}" value="${esc(v)}">`)+'</div>'}html+=`<div class="form-actions"><button class="btn primary" onclick="saveForm()">💾 ${id?'Save Changes':'Save Record'}</button><button class="btn secondary" onclick="closeModal()">❌ Cancel</button>${id?`<button class="btn danger" onclick="deleteRecord('${type}','${id}');closeModal()">🗑️ Delete</button>`:''}</div></div>`;document.getElementById('modalBody').innerHTML=html;document.getElementById('modal').classList.add('show')}
+function saveForm(){let {type,id}=editState,r={_id:id||uid()};for(const f of fields[type]){let [k,l,t,req]=f,v=document.getElementById('f_'+k).value.trim();if(req&&!v){toast(l+' is required');return}r[k]=v}
+if((type==='cattle'||type==='calves'||type==='bulls')&&db[type].some(x=>x.id===r.id&&x._id!==id)){toast('Duplicate ID not allowed');return}
+if(id){let i=db[type].findIndex(x=>x._id===id);db[type][i]=r}else db[type].push(r);saveDB();closeModal();toast(id?'Record updated':'Record saved')}
+function deleteRecord(type,id){let arr=db[type]||[],i=arr.findIndex(x=>x._id===id);if(i<0)return;if(!confirm('Delete this record? It will go to Recycle Bin and can be restored.'))return;let r=arr.splice(i,1)[0];db.recycle.push({from:type,record:r,deletedAt:new Date().toISOString()});saveDB();toast('Moved to Recycle Bin')}
+function renderRecycle(){let el=document.getElementById('recycleList');if(!db.recycle.length){el.innerHTML='<div class="list-empty">Recycle Bin is empty.</div>';return}el.innerHTML=db.recycle.map((x,i)=>`<div class="card"><b>${esc(labels[x.from]||x.from)}</b><div class="muted">${esc(x.record.name||x.record.id||x.record.strawId||x.record.cowId||'Record')} • deleted ${new Date(x.deletedAt).toLocaleString()}</div><div class="form-actions"><button class="btn primary" onclick="restoreRecord(${i})">♻️ Restore</button><button class="btn danger" onclick="permanentDelete(${i})">Delete Permanently</button></div></div>`).join('')}
+function restoreRecord(i){let x=db.recycle[i];if(!x)return;db[x.from].push(x.record);db.recycle.splice(i,1);saveDB();toast('Record restored')}
+function permanentDelete(i){if(!confirm('Permanently delete this record?'))return;db.recycle.splice(i,1);saveDB();toast('Permanently deleted')}
+function openProfile(type,id){let r=db[type].find(x=>x._id===id);if(!r)return;let html=`<div class="detail">`;for(const f of fields[type]){let k=f[0],l=f[1];html+=`<div class="kv"><b>${esc(l)}</b><span>${esc(r[k]||'—')}</span></div>`}html+=`</div><div class="form-actions"><button class="btn primary" onclick="closeModal();openForm('${type}','${id}')">✏️ Edit</button><button class="btn danger" onclick="deleteRecord('${type}','${id}');closeModal()">🗑️ Delete</button></div>`;if(type==='cattle'){let idv=r.id;html+=`<div class="section" style="margin-top:12px"><h2>Complete Animal History</h2>${linkedHistory(idv)}</div>`}document.getElementById('modalTitle').textContent=(r.name||r.id||'Animal')+' — Complete Profile';document.getElementById('modalBody').innerHTML=html;document.getElementById('modal').classList.add('show')}
+function linkedHistory(id){let b=db.breeding.filter(x=>x.cowId===id),l=db.lactation.filter(x=>x.cowId===id),c=db.calves.filter(x=>x.dam===id),h=db.health.filter(x=>x.animalId===id);return `<p><b>Breeding:</b> ${b.length} records</p><p><b>Lactation:</b> ${l.length} records</p><p><b>Calves:</b> ${c.length} records</p><p><b>Health:</b> ${h.length} records</p><p class="muted">All linked records remain connected to this Animal ID.</p>`}
+function renderPedigree(){let el=document.getElementById('pedigreeList');if(!el)return;el.innerHTML=db.cattle.map(r=>`<div class="card"><b>${esc(r.name||r.id)}</b><div class="muted">${esc(r.id)} • Father: ${esc(r.sire||'—')} • Mother: ${esc(r.dam||'—')}</div><div class="form-actions"><button class="btn secondary" onclick="openProfile('cattle','${r._id}')">🌳 View Pedigree & Complete Profile</button></div></div>`).join('')||'<div class="list-empty">Add cattle to build the pedigree.</div>'}
+function renderReports(){let el=document.getElementById('reportsBox');if(!el)return;let rows=TYPES.map(t=>`<div class="kv"><b>${labels[t]}</b><span>${db[t].length} records</span></div>`).join('');el.innerHTML=`<div class="detail">${rows}</div><div class="section" style="margin-top:12px"><h2>Data Safety</h2><p class="muted">Records are stored locally on this phone. Editing updates the same record; duplicate IDs are blocked. Deleted records go to Recycle Bin.</p></div>`}
+function closeModal(){document.getElementById('modal').classList.remove('show');editState=null}
+function openQuickAdd(){openForm('cattle')}
+function backupData(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Punganur-Cattles-Backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('Backup exported')}
+function restoreData(e){let f=e.target.files[0];if(!f)return;let rd=new FileReader();rd.onload=()=>{try{let incoming=JSON.parse(rd.result);if(!incoming||!Array.isArray(incoming.cattle))throw 0;for(const t of TYPES){for(const r of (incoming[t]||[])){if(!db[t].some(x=>x._id===r._id || (r.id&&x.id===r.id))){db[t].push(r)}}}for(const r of (incoming.recycle||[])){if(!db.recycle.some(x=>JSON.stringify(x.record)===JSON.stringify(r.record))){db.recycle.push(r)}}saveDB();toast('Backup restored without duplicates')}catch(err){alert('Invalid backup file')}};rd.readAsText(f);e.target.value=''}
+updateDashboard();TYPES.forEach(t=>renderList(t));renderReports();renderPedigree();renderRecycle();
+</script>
+</body>
+</html>
