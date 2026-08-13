@@ -2,210 +2,170 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#315b35">
-<title>Punganur Cattles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Punganur Cattles V4</title>
 <style>
-:root{--g:#315b35;--g2:#56845b;--bg:#f5f7f3;--card:#fff;--muted:#68746b;--red:#b3261e}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#1d2a20;font-family:Arial,system-ui,sans-serif}
-.app{max-width:760px;margin:auto;padding-bottom:82px}.top{background:linear-gradient(135deg,#274d2d,#58865b);color:#fff;padding:16px;position:sticky;top:0;z-index:5}
-.brand{display:flex;align-items:center;gap:11px}.logo,.profile{background:#fff;overflow:hidden;display:grid;place-items:center}.logo{width:50px;height:50px;border-radius:15px;font-size:28px}.profile{width:46px;height:46px;border-radius:50%;margin-left:auto;border:2px solid #fff;font-size:21px}.logo img,.profile img{width:100%;height:100%;object-fit:cover}
-.brand h1{font-size:20px;margin:0}.brand small{opacity:.85}.slider{margin:14px;border-radius:18px;overflow:hidden;background:#29452e;box-shadow:0 5px 20px #0002}.slides{display:flex;transition:transform .4s}.slide{min-width:100%;height:230px;position:relative}.slide img{width:100%;height:100%;object-fit:cover}.cap{position:absolute;bottom:0;left:0;right:0;padding:30px 14px 12px;color:#fff;background:linear-gradient(transparent,#000b);font-weight:700}
-.content{padding:14px}.title{display:flex;justify-content:space-between;align-items:center;margin:7px 0 11px}.title h2{margin:0;font-size:19px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card,.tile{background:var(--card);border:1px solid #e0e7e0;border-radius:15px;padding:14px;box-shadow:0 3px 12px #00000009}.tile{font:inherit;text-align:left;cursor:pointer}.tile .ico{font-size:27px;display:block}.tile b{display:block;margin-top:7px}.btn{border:0;border-radius:10px;padding:9px 12px;background:var(--g);color:#fff;font-weight:700;cursor:pointer}.btn.secondary{background:#e8efe8;color:var(--g)}.btn.danger{background:var(--red)}.btn.small{padding:7px 10px;font-size:12px}
-input,select,textarea{width:100%;padding:10px;border:1px solid #ccd6cc;border-radius:9px;margin-top:5px;font:inherit;background:#fff}label{display:block;color:var(--muted);font-size:13px;margin-top:9px}.actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.list{display:grid;gap:9px}.animal{display:flex;gap:11px;align-items:center}.animal-photo{width:72px;height:72px;border-radius:13px;object-fit:cover;background:#e7eee7;flex:none}.id{display:inline-block;background:#e8efe8;color:var(--g);padding:4px 7px;border-radius:7px;font-size:11px;font-weight:700;margin-top:4px}.muted{color:var(--muted);font-size:12px}.empty{text-align:center;padding:25px;color:var(--muted)}
-.section{display:none}.section.active{display:block}.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;z-index:10}.navs{max-width:760px;margin:auto;display:flex;justify-content:space-around}.nav{border:0;background:none;padding:8px 13px;color:#68746b;cursor:pointer;font-size:12px}.nav .ico{display:block;font-size:20px}.nav.active{color:var(--g);font-weight:700}
-.modal{position:fixed;inset:0;background:#0008;display:none;align-items:flex-end;z-index:30}.modal.open{display:flex}.sheet{width:100%;max-width:760px;margin:auto;background:#fff;border-radius:20px 20px 0 0;padding:18px;max-height:90vh;overflow:auto}.sheet h2{margin-top:0}.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.photo-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}.hero{display:flex;gap:13px;align-items:center}.hero img{width:110px;height:110px;object-fit:cover;border-radius:16px;background:#e7eee7}.toast{position:fixed;left:50%;bottom:75px;transform:translateX(-50%);background:#1f2a22;color:#fff;padding:10px 14px;border-radius:10px;display:none;z-index:50}
-@media(min-width:650px){.slide{height:300px}.grid{grid-template-columns:repeat(4,1fr)}}
+*{box-sizing:border-box}body{margin:0;background:#f4f7f2;color:#203024;font-family:Arial,sans-serif}.app{max-width:850px;margin:auto;padding-bottom:75px}
+header{background:linear-gradient(135deg,#244b2b,#5f8c62);color:#fff;padding:14px;position:sticky;top:0;z-index:5}.brand{display:flex;align-items:center;gap:10px}.logo,.profile{background:#fff;color:#315b35;display:grid;place-items:center;overflow:hidden}.logo{width:48px;height:48px;border-radius:14px;font-size:26px}.profile{width:42px;height:42px;border-radius:50%;margin-left:auto}.logo img,.profile img{width:100%;height:100%;object-fit:cover}
+h1{font-size:20px;margin:0}h2,h3{margin:8px 0}.sub{opacity:.85;font-size:12px}.content{padding:13px}.section{display:none}.section.active{display:block}
+.card,.tile{background:#fff;border:1px solid #dce5dc;border-radius:15px;padding:13px;box-shadow:0 3px 12px #00000008}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.tile{font:inherit;text-align:left;cursor:pointer}.ico{font-size:26px;display:block}.muted{font-size:12px;color:#6a766d}.btn{border:0;border-radius:9px;padding:9px 12px;background:#315b35;color:#fff;font-weight:bold;cursor:pointer}.btn.secondary{background:#e8efe8;color:#315b35}.btn.danger{background:#b3261e}.btn.small{font-size:12px;padding:7px 9px}.actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+input,select,textarea{width:100%;padding:10px;border:1px solid #ccd7cd;border-radius:9px;margin-top:5px;font:inherit}label{display:block;font-size:13px;color:#647066;margin-top:9px}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.id{display:inline-block;background:#e8efe8;color:#315b35;border-radius:7px;padding:4px 7px;font-size:11px;font-weight:bold;margin-top:4px}
+.animal{display:flex;gap:11px}.animal>img{width:72px;height:72px;object-fit:cover;border-radius:12px;background:#e8eee8}.list{display:grid;gap:9px}.empty{text-align:center;padding:25px;color:#6a766d}
+.hero{display:flex;gap:14px;align-items:center}.hero>img{width:110px;height:110px;object-fit:cover;border-radius:16px;background:#e8eee8}.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.photo-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.slider{margin:13px;border-radius:17px;overflow:hidden;background:#263d29}.slides{display:flex;transition:.4s}.slide{min-width:100%;height:220px;position:relative}.slide img{width:100%;height:100%;object-fit:cover}.cap{position:absolute;left:0;right:0;bottom:0;color:white;padding:30px 13px 11px;background:linear-gradient(transparent,#000b);font-weight:bold}
+.navbar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #dce5dc;z-index:8}.navs{max-width:850px;margin:auto;display:flex;justify-content:space-around}.nav{border:0;background:none;padding:8px 12px;color:#6a766d;cursor:pointer;font-size:12px}.nav .ico{font-size:19px}.nav.active{color:#315b35;font-weight:bold}
+.modal{position:fixed;inset:0;background:#0008;display:none;align-items:flex-end;z-index:20}.modal.open{display:flex}.sheet{background:#fff;width:100%;max-width:850px;margin:auto;border-radius:20px 20px 0 0;padding:17px;max-height:93vh;overflow:auto}.toast{display:none;position:fixed;bottom:72px;left:50%;transform:translateX(-50%);background:#202a22;color:#fff;padding:10px 14px;border-radius:10px;z-index:30}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}.slide{height:300px}}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="top"><div class="brand"><div class="logo" id="logo">🐄</div><div><h1>Punganur Cattles</h1><small>Custom Farm App • V2</small></div><div class="profile" id="profile">👤</div></div></header>
+<header><div class="brand"><div class="logo" id="logo">🐄</div><div><h1>Punganur Cattles</h1><div class="sub">Breeding • Calves • Health • Pedigree</div></div><div class="profile" id="profile">👤</div></div></header>
 <div class="slider"><div class="slides" id="slides"></div></div>
 
 <main class="content">
-<section class="section active" id="home">
- <div class="title"><h2>Home</h2><button class="btn small" data-action="homePhotos">📷 Photos</button></div>
- <div class="grid">
-  <button class="tile" data-action="addCattle"><span class="ico">🐄</span><b>Add Cattle</b></button>
-  <button class="tile" data-action="cattle"><span class="ico">📋</span><b>All Cattle</b></button>
-  <button class="tile" data-action="profile"><span class="ico">👤</span><b>My Profile</b></button>
-  <button class="tile" data-action="backup"><span class="ico">💾</span><b>Backup</b></button>
- </div>
- <h3>Farm Summary</h3>
- <div class="grid"><div class="card">🐄 <b id="countCattle">0</b><div class="muted">Cattle</div></div><div class="card">🧬 <b id="countBreeding">0</b><div class="muted">Breeding</div></div><div class="card">🐮 <b id="countCalving">0</b><div class="muted">Calves</div></div><div class="card">🥛 <b id="countLactation">0</b><div class="muted">Lactation</div></div></div>
+<section id="home" class="section active">
+<div style="display:flex;justify-content:space-between;align-items:center"><h2>Home</h2><button class="btn small" data-action="homePhotos">🖼️ Slider Photos</button></div>
+<div class="grid">
+<button class="tile" data-action="addCattle"><span class="ico">🐄</span><b>Add Cattle</b><div class="muted">Create Animal ID</div></button>
+<button class="tile" data-nav="cattle"><span class="ico">📋</span><b>Cattle Register</b><div class="muted">All animals</div></button>
+<button class="tile" data-nav="records"><span class="ico">🧬</span><b>Farm Records</b><div class="muted">Breeding & health</div></button>
+<button class="tile" data-action="profile"><span class="ico">👤</span><b>Profile</b><div class="muted">Picture & logo</div></button>
+</div>
+<h3>Farm Summary</h3><div class="grid">
+<div class="card">🐄 <b id="nC">0</b><div class="muted">Cattle</div></div>
+<div class="card">🧬 <b id="nB">0</b><div class="muted">Breeding</div></div>
+<div class="card">🐮 <b id="nK">0</b><div class="muted">Calf Records</div></div>
+<div class="card">🩺 <b id="nH">0</b><div class="muted">Health</div></div>
+</div>
 </section>
 
-<section class="section" id="cattle">
- <div class="title"><h2>Cattle Register</h2><button class="btn small" data-action="addCattle">＋ Add</button></div>
- <input id="search" placeholder="Search Animal ID, name or breed">
- <div id="cattleList" class="list" style="margin-top:10px"></div>
+<section id="cattle" class="section">
+<div style="display:flex;justify-content:space-between;align-items:center"><h2>Cattle Register</h2><button class="btn small" data-action="addCattle">＋ Add</button></div>
+<input id="search" placeholder="Search Animal ID / name / breed">
+<div id="cattleList" class="list" style="margin-top:10px"></div>
 </section>
 
-<section class="section" id="animal">
- <div class="title"><button class="btn secondary small" data-action="backCattle">← Back</button><h2 id="animalTitle"></h2></div>
- <div id="animalBody"></div>
+<section id="animal" class="section">
+<div class="actions"><button class="btn secondary small" data-nav="cattle">← Cattle Register</button></div>
+<h2 id="animalName"></h2><div id="animalBody"></div>
 </section>
 
-<section class="section" id="records">
- <h2>Records</h2>
- <div class="grid">
-  <button class="tile" data-record="breeding"><span class="ico">🧬</span><b>Breeding</b></button>
-  <button class="tile" data-record="calving"><span class="ico">🐮</span><b>Calves / Calving</b></button>
-  <button class="tile" data-record="lactation"><span class="ico">🥛</span><b>Lactation</b></button>
-  <button class="tile" data-record="health"><span class="ico">🩺</span><b>Health</b></button>
-  <button class="tile" data-record="semen"><span class="ico">🧪</span><b>Semen</b></button>
-  <button class="tile" data-record="pedigree"><span class="ico">🌳</span><b>Pedigree</b></button>
- </div>
- <div id="recordList" style="margin-top:12px"></div>
+<section id="records" class="section">
+<h2>Farm Records</h2>
+<div class="grid">
+<button class="tile" data-record="breeding"><span class="ico">🧬</span><b>Breeding</b><div class="muted">Heat → AI → PD → Calving</div></button>
+<button class="tile" data-record="calves"><span class="ico">🐮</span><b>Calves</b><div class="muted">Birth & calf health</div></button>
+<button class="tile" data-record="health"><span class="ico">🩺</span><b>Health</b><div class="muted">Vaccines & treatment</div></button>
+<button class="tile" data-record="lactation"><span class="ico">🥛</span><b>Lactation</b><div class="muted">Milk records</div></button>
+</div>
+<div id="recordArea"></div>
 </section>
 
-<section class="section" id="more">
- <h2>More</h2>
- <div class="grid">
-  <button class="tile" data-action="backup"><span class="ico">💾</span><b>Export Backup</b></button>
-  <button class="tile" data-action="restore"><span class="ico">📥</span><b>Restore Backup</b></button>
-  <button class="tile" data-action="profile"><span class="ico">👤</span><b>Profile & Logo</b></button>
-  <button class="tile" data-action="homePhotos"><span class="ico">🖼️</span><b>Home Photos</b></button>
- </div>
+<section id="more" class="section">
+<h2>More</h2><div class="grid">
+<button class="tile" data-action="backup"><span class="ico">💾</span><b>Backup</b></button>
+<button class="tile" data-action="restore"><span class="ico">📥</span><b>Restore</b></button>
+<button class="tile" data-action="profile"><span class="ico">👤</span><b>Profile & Logo</b></button>
+<button class="tile" data-action="homePhotos"><span class="ico">🖼️</span><b>Slider Photos</b></button>
+</div>
 </section>
 </main>
 </div>
 
-<nav class="bottom"><div class="navs">
+<nav class="navbar"><div class="navs">
 <button class="nav active" data-nav="home"><span class="ico">🏠</span>Home</button>
 <button class="nav" data-nav="cattle"><span class="ico">🐄</span>Cattle</button>
 <button class="nav" data-nav="records"><span class="ico">📋</span>Records</button>
 <button class="nav" data-nav="more"><span class="ico">☰</span>More</button>
 </div></nav>
-
 <div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
-<input id="restoreFile" type="file" accept=".json,application/json" hidden>
+<input id="restoreFile" type="file" accept=".json" hidden>
 <div class="toast" id="toast"></div>
 
 <script>
-(function(){
-"use strict";
-const KEY="punganur_cattles_v2_reliable";
-let data;
-try{data=JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){data=null}
-if(!data)data={cattle:[],breeding:[],calving:[],lactation:[],health:[],semen:[],pedigree:[],homePhotos:[],profile:"",logo:""};
-["cattle","breeding","calving","lactation","health","semen","pedigree","homePhotos"].forEach(k=>{if(!Array.isArray(data[k]))data[k]=[]});
-data.cattle.forEach(c=>{if(!Array.isArray(c.photos))c.photos=[]});
-
-const $=id=>document.getElementById(id);
-const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-function persist(){localStorage.setItem(KEY,JSON.stringify(data));refresh()}
-function toast(msg){const t=$("toast");t.textContent=msg;t.style.display="block";setTimeout(()=>t.style.display="none",1800)}
-function show(id){document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));$(id).classList.add("active");document.querySelectorAll(".nav").forEach(n=>n.classList.toggle("active",n.dataset.nav===id))}
-function openModal(html){$("sheet").innerHTML=html;$("modal").classList.add("open")}
-function closeModal(){$("modal").classList.remove("open")}
-$("modal").addEventListener("click",e=>{if(e.target===$("modal"))closeModal()});
+(()=> {
+const KEY="punganur_cattles_v4";
+let D=JSON.parse(localStorage.getItem(KEY)||"null")||{cattle:[],breeding:[],calves:[],health:[],lactation:[],homePhotos:[],profile:"",logo:""};
+["cattle","breeding","calves","health","lactation","homePhotos"].forEach(k=>{if(!Array.isArray(D[k]))D[k]=[]});
+D.cattle.forEach(c=>c.photos||(c.photos=[]));
+const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const placeholder=()=> "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><rect width="100%" height="100%" fill="#e7eee7"/><text x="50%" y="60%" text-anchor="middle" font-size="52">🐄</text></svg>');
+function save(){localStorage.setItem(KEY,JSON.stringify(D));refresh()}
+function toast(s){$("toast").textContent=s;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",1700)}
+function nav(id){document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));$(id).classList.add("active");document.querySelectorAll(".nav").forEach(x=>x.classList.toggle("active",x.dataset.nav===id));if(id==="cattle")renderCattle()}
+function modal(x){$("sheet").innerHTML=x;$("modal").classList.add("open")}function close(){ $("modal").classList.remove("open") }
+$("modal").onclick=e=>{if(e.target===$("modal"))close()}
+async function image(file){return new Promise((resolve,reject)=>{let r=new FileReader();r.onload=()=>{let im=new Image();im.onload=()=>{let s=Math.min(1,1400/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);resolve(c.toDataURL("image/jpeg",.8))};im.onerror=reject;im.src=r.result};r.onerror=reject;r.readAsDataURL(file)})}
 
 document.addEventListener("click",e=>{
- const nav=e.target.closest("[data-nav]"); if(nav){show(nav.dataset.nav);if(nav.dataset.nav==="cattle")renderCattle();return}
- const act=e.target.closest("[data-action]"); if(act){const a=act.dataset.action;
-  if(a==="addCattle")return cattleForm();
-  if(a==="cattle"){show("cattle");return renderCattle()}
-  if(a==="backCattle"){show("cattle");return renderCattle()}
-  if(a==="profile")return profileForm();
-  if(a==="homePhotos")return homePhotos();
-  if(a==="backup")return backup();
-  if(a==="restore")return $("restoreFile").click();
- }
- const rec=e.target.closest("[data-record]");if(rec)return recordPage(rec.dataset.record,"");
- const ca=e.target.closest("[data-cattle-action]");if(ca){
-   const a=ca.dataset.cattleAction,id=ca.dataset.id;
-   if(a==="view")return showAnimal(id);
-   if(a==="edit")return cattleForm(id);
-   if(a==="delete")return deleteCattle(id);
-   if(a==="photo")return primaryPhoto(id);
-   if(a==="photos")return animalPhotos(id);
- }
- const ra=e.target.closest("[data-record-action]");if(ra){
-   const a=ra.dataset.recordAction,k=ra.dataset.kind,id=ra.dataset.id;
-   if(a==="add")return recordForm(k,id,"");
-   if(a==="edit")return recordForm(k,ra.dataset.cattle,""+id);
-   if(a==="delete")return deleteRecord(k,id);
- }
+let n=e.target.closest("[data-nav]");if(n)return nav(n.dataset.nav);
+let a=e.target.closest("[data-action]");if(a){let x=a.dataset.action;if(x==="addCattle")return cattleForm();if(x==="profile")return profileForm();if(x==="homePhotos")return homePhotos();if(x==="backup")return backup();if(x==="restore")return $("restoreFile").click()}
+let r=e.target.closest("[data-record]");if(r)return recordPage(r.dataset.record,"");
+let c=e.target.closest("[data-cattle]");if(c){let x=c.dataset.cattle,id=c.dataset.id;if(x==="view")return animal(id);if(x==="edit")return cattleForm(id);if(x==="delete")return deleteCattle(id);if(x==="photos")return photos(id)}
+let rr=e.target.closest("[data-rec]");if(rr){let x=rr.dataset.rec,k=rr.dataset.kind,id=rr.dataset.id;if(x==="add")return recordForm(k,rr.dataset.cid||"");if(x==="edit")return recordForm(k,rr.dataset.cid,id);if(x==="delete")return deleteRecord(k,id)}
 });
-$("search").addEventListener("input",renderCattle);
-$("restoreFile").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);data=x;["cattle","breeding","calving","lactation","health","semen","pedigree","homePhotos"].forEach(k=>{if(!Array.isArray(data[k]))data[k]=[]});data.cattle.forEach(c=>{if(!Array.isArray(c.photos))c.photos=[]});persist();toast("Backup restored")}catch(err){alert("Invalid backup file")}};r.readAsText(f);e.target.value=""});
+$("search").oninput=renderCattle;
+$("restoreFile").onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{D=JSON.parse(r.result);save();toast("Backup restored")}catch(_){alert("Invalid backup")}};r.readAsText(f);e.target.value=""};
 
-function cattleForm(id=""){
- const c=data.cattle.find(x=>x.id===id)||{};
- openModal(`<h2>${id?"Edit":"Add"} Cattle</h2>
- <label>Animal ID *<input id="f_id" value="${esc(c.id||"")}" ${id?"readonly":""}></label>
- <label>Name<input id="f_name" value="${esc(c.name||"")}"></label>
- <label>Sex<select id="f_sex"><option ${c.sex==="Cow"?"selected":""}>Cow</option><option ${c.sex==="Bull"?"selected":""}>Bull</option><option ${c.sex==="Calf"?"selected":""}>Calf</option></select></label>
- <label>Breed<input id="f_breed" value="${esc(c.breed||"Punganur")}"></label>
- <label>DOB<input id="f_dob" type="date" value="${esc(c.dob||"")}"></label>
- <label>Mother ID<input id="f_mother" value="${esc(c.mother||"")}"></label>
- <label>Father/Bull ID<input id="f_father" value="${esc(c.father||"")}"></label>
- <label>Notes<textarea id="f_notes">${esc(c.notes||"")}</textarea>
- <label>Primary cow picture <input id="f_photo" type="file" accept="image/*"></label>
- <div class="actions"><button class="btn" id="saveCattleBtn">💾 Save</button><button class="btn secondary" id="cancelBtn">Cancel</button>${id?'<button class="btn danger" id="deleteCattleBtn">🗑 Delete</button>':""}</div>`);
- $("cancelBtn").onclick=closeModal;
- $("saveCattleBtn").onclick=()=>saveCattle(id);
- if(id)$("deleteCattleBtn").onclick=()=>{closeModal();deleteCattle(id)};
+function cattleForm(id=""){let c=D.cattle.find(x=>x.id===id)||{};modal(`<h2>${id?"Edit":"Add"} Cattle</h2>
+<label>Animal ID *<input id="id" value="${esc(c.id||"")}" ${id?"readonly":""}></label>
+<div class="row"><label>Name<input id="name" value="${esc(c.name||"")}"></label><label>Sex<select id="sex"><option ${c.sex==="Cow"?"selected":""}>Cow</option><option ${c.sex==="Bull"?"selected":""}>Bull</option><option ${c.sex==="Calf"?"selected":""}>Calf</option></select></label></div>
+<div class="row"><label>Breed<input id="breed" value="${esc(c.breed||"Punganur")}"></label><label>DOB<input id="dob" type="date" value="${esc(c.dob||"")}"></label></div>
+<div class="row"><label>Mother ID<input id="mother" value="${esc(c.mother||"")}"></label><label>Father/Bull ID<input id="father" value="${esc(c.father||"")}"></label></div>
+<label>Primary Picture<input id="pic" type="file" accept="image/*"></label>
+<label>Notes<textarea id="notes">${esc(c.notes||"")}</textarea></label>
+<div class="actions"><button class="btn" id="saveC">💾 Save</button><button class="btn secondary" id="cancelC">Cancel</button>${id?'<button class="btn danger" id="delC">Delete</button>':""}</div>`);
+$("cancelC").onclick=close;
+$("saveC").onclick=async()=>{let aid=$("id").value.trim();if(!aid)return alert("Animal ID is required");if(!id&&D.cattle.some(x=>x.id.toLowerCase()===aid.toLowerCase()))return alert("Duplicate Animal ID is not allowed");
+let old=D.cattle.find(x=>x.id===id), c={id:aid,name:$("name").value.trim(),sex:$("sex").value,breed:$("breed").value.trim(),dob:$("dob").value,mother:$("mother").value.trim(),father:$("father").value.trim(),notes:$("notes").value,photo:old?.photo||"",photos:old?.photos||[]};
+if($("pic").files[0]){c.photo=await image($("pic").files[0]);if(!c.photos.includes(c.photo))c.photos.unshift(c.photo)}
+let i=D.cattle.findIndex(x=>x.id===id);if(i>=0)D.cattle[i]=c;else D.cattle.push(c);close();save();toast("Cattle saved")};
+if(id)$("delC").onclick=()=>{close();deleteCattle(id)}
 }
-function saveCattle(oldId){
- const id=$("f_id").value.trim();if(!id)return alert("Animal ID is required");
- if(!oldId && data.cattle.some(c=>c.id.toLowerCase()===id.toLowerCase()))return alert("Duplicate Animal ID is not allowed");
- const old=data.cattle.find(c=>c.id===oldId)||{};
- const c={id,name:$("f_name").value.trim(),sex:$("f_sex").value,breed:$("f_breed").value.trim(),dob:$("f_dob").value,mother:$("f_mother").value.trim(),father:$("f_father").value.trim(),notes:$("f_notes").value,photo:old.photo||"",photos:old.photos||[]};
- const file=$("f_photo").files[0];
- if(file){readImage(file).then(img=>{c.photo=img;if(!c.photos.includes(img))c.photos.unshift(img);finishCattle(c,oldId)}).catch(()=>alert("Could not read picture"))}
- else finishCattle(c,oldId);
-}
-function finishCattle(c,oldId){if(oldId)data.cattle[data.cattle.findIndex(x=>x.id===oldId)]=c;else data.cattle.push(c);closeModal();persist();toast("Cattle saved");renderCattle()}
-function deleteCattle(id){if(confirm("Delete Animal ID "+id+" and all its linked records?")){data.cattle=data.cattle.filter(c=>c.id!==id);["breeding","calving","lactation","health","semen","pedigree"].forEach(k=>data[k]=data[k].filter(r=>r.cattleId!==id));persist();renderCattle();toast("Cattle deleted")}}
-function readImage(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const max=1200,scale=Math.min(1,max/Math.max(im.width,im.height)),cv=document.createElement("canvas");cv.width=Math.round(im.width*scale);cv.height=Math.round(im.height*scale);cv.getContext("2d").drawImage(im,0,0,cv.width,cv.height);resolve(cv.toDataURL("image/jpeg",.78))};im.onerror=reject;im.src=r.result};r.onerror=reject;r.readAsDataURL(file)})}
+function deleteCattle(id){if(!confirm("Delete this animal and its linked records?"))return;D.cattle=D.cattle.filter(x=>x.id!==id);["breeding","calves","health","lactation"].forEach(k=>D[k]=D[k].filter(r=>r.cattleId!==id));save();nav("cattle")}
+function renderCattle(){let q=($("search").value||"").toLowerCase(),a=D.cattle.filter(c=>(c.id+" "+c.name+" "+c.breed).toLowerCase().includes(q));$("cattleList").innerHTML=a.length?a.map(c=>`<div class="card animal"><img src="${c.photo||placeholder()}"><div style="flex:1"><b>${esc(c.name||"Unnamed")}</b><div class="id">Animal ID: ${esc(c.id)}</div><div class="muted">${esc(c.sex)} • ${esc(c.breed)} • DOB ${esc(c.dob||"-")}</div><div class="actions"><button class="btn small" data-cattle="view" data-id="${esc(c.id)}">View All Records</button><button class="btn secondary small" data-cattle="edit" data-id="${esc(c.id)}">Edit</button><button class="btn secondary small" data-cattle="photos" data-id="${esc(c.id)}">📷 Photos</button><button class="btn danger small" data-cattle="delete" data-id="${esc(c.id)}">Delete</button></div></div></div>`).join(""):'<div class="empty">No cattle records.</div>'}
 
-function renderCattle(){
- const q=$("search").value.toLowerCase();const list=data.cattle.filter(c=>(c.id+" "+c.name+" "+c.breed).toLowerCase().includes(q));
- $("cattleList").innerHTML=list.length?list.map(c=>`<div class="card animal"><img class="animal-photo" src="${c.photo||placeholder()}"><div style="flex:1"><b>${esc(c.name||"Unnamed")}</b><div class="id">Animal ID: ${esc(c.id)}</div><div class="muted">${esc(c.sex)} • ${esc(c.breed)} • ${esc(c.dob||"-")}</div><div class="actions"><button class="btn small" data-cattle-action="view" data-id="${esc(c.id)}">View</button><button class="btn secondary small" data-cattle-action="edit" data-id="${esc(c.id)}">Edit</button><button class="btn secondary small" data-cattle-action="photo" data-id="${esc(c.id)}">📷 Photo</button><button class="btn danger small" data-cattle-action="delete" data-id="${esc(c.id)}">Delete</button></div></div></div>`).join(""):'<div class="empty">No cattle found. Tap Add.</div>';
+function animal(id){let c=D.cattle.find(x=>x.id===id);if(!c)return;nav("animal");$("animalName").textContent=(c.name||"Unnamed")+" — "+c.id;
+$("animalBody").innerHTML=`<div class="card"><div class="hero"><img src="${c.photo||placeholder()}"><div><h3>${esc(c.name||"Unnamed")}</h3><span class="id">Animal ID: ${esc(c.id)}</span><div class="muted">${esc(c.sex)} • ${esc(c.breed)}<br>DOB: ${esc(c.dob||"-")}<br>Mother: ${esc(c.mother||"-")} • Father: ${esc(c.father||"-")}</div></div></div><div class="actions"><button class="btn small" data-cattle="edit" data-id="${esc(id)}">✏️ Edit</button><button class="btn secondary small" data-cattle="photos" data-id="${esc(id)}">🖼️ Photos</button></div></div>
+<div class="grid" style="margin-top:10px">
+${["breeding","calves","health","lactation"].map(k=>`<button class="tile" data-openrecord="${k}" data-id="${esc(id)}"><span class="ico">${k==="breeding"?"🧬":k==="calves"?"🐮":k==="health"?"🩺":"🥛"}</span><b>${k[0].toUpperCase()+k.slice(1)}</b><div class="muted">${D[k].filter(r=>r.cattleId===id).length} records</div></button>`).join("")}</div>`;
+$("animalBody").onclick=e=>{let b=e.target.closest("[data-openrecord]");if(b)return recordPage(b.dataset.openrecord,b.dataset.id)}
 }
-function showAnimal(id){
- const c=data.cattle.find(x=>x.id===id);if(!c)return;
- show("animal");$("animalTitle").textContent=c.name||id;
- const linked=["breeding","calving","lactation","health","semen","pedigree"].map(k=>`<div class="card" style="margin-top:9px"><b>${k[0].toUpperCase()+k.slice(1)}</b><div class="muted">${data[k].filter(r=>r.cattleId===id).length} linked records</div><button class="btn secondary small" data-open-record="${k}" data-id="${esc(id)}">Open</button></div>`).join("");
- $("animalBody").innerHTML=`<div class="card"><div class="hero"><img src="${c.photo||placeholder()}"><div><h2 style="margin:0">${esc(c.name||"Unnamed")}</h2><div class="id">Animal ID: ${esc(c.id)}</div><div class="muted">${esc(c.sex)} • ${esc(c.breed)}<br>DOB: ${esc(c.dob||"-")}<br>Mother: ${esc(c.mother||"-")} • Father: ${esc(c.father||"-")}</div></div></div><div class="actions"><button class="btn small" data-cattle-action="edit" data-id="${esc(id)}">✏️ Edit</button><button class="btn secondary small" data-cattle-action="photo" data-id="${esc(id)}">📷 Main Photo</button><button class="btn secondary small" data-cattle-action="photos" data-id="${esc(id)}">🖼️ All Photos</button></div></div>
- <div class="card" style="margin-top:10px"><b>Photos linked to Animal ID ${esc(id)}</b><div class="photo-grid" style="margin-top:9px">${(c.photos||[]).map((p,i)=>`<div><img src="${p}"><button class="btn danger small" data-photo-delete="${i}" data-id="${esc(id)}">Delete</button></div>`).join("")||'<div class="empty" style="grid-column:1/-1">No extra photos.</div>'}</div><div class="actions"><button class="btn small" data-add-photos="${esc(id)}">＋ Add Photos</button></div></div>${linked}`;
+$("animalBody").addEventListener("click",()=>{});
+
+function photos(id){let c=D.cattle.find(x=>x.id===id);modal(`<h2>Photos — ${esc(c.name||"Unnamed")} (${esc(id)})</h2><input id="files" type="file" accept="image/*" multiple><div class="actions"><button class="btn" id="addPics">Attach Photos</button><button class="btn secondary" id="closePics">Close</button></div><div class="photo-grid" style="margin-top:10px">${(c.photos||[]).map((p,i)=>`<div><img src="${p}"><button class="btn danger small" data-photo-delete="${i}" data-id="${esc(id)}">Delete</button></div>`).join("")||'<div class="empty">No photos attached.</div>'}</div>`);$("closePics").onclick=close;$("addPics").onclick=async()=>{for(const f of $("files").files)c.photos.push(await image(f));close();save();animal(id)}
+}
+$("sheet").addEventListener("click",e=>{let b=e.target.closest("[data-photo-delete]");if(b){let c=D.cattle.find(x=>x.id===b.dataset.id);c.photos.splice(+b.dataset.photoDelete,1);save();photos(c.id)}});
+
+function recordPage(kind,cid=""){nav("records");let title={breeding:"Breeding & Pregnancy",calves:"Calves & Calf Health",health:"Health & Veterinary",lactation:"Lactation"}[kind];let rows=D[kind].filter(r=>!cid||r.cattleId===cid);
+$("recordArea").innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px"><h3>${title}</h3><button class="btn small" data-rec="add" data-kind="${kind}" data-cid="${esc(cid)}">＋ Add Record</button></div>
+${rows.length?rows.map(r=>`<div class="card" style="margin-top:8px"><b>${esc(r.title||"Record")}</b><div class="id">Animal ID: ${esc(r.cattleId)}</div><div class="muted" style="white-space:pre-line;margin-top:7px">${esc(r.details)}</div><div class="actions"><button class="btn secondary small" data-rec="edit" data-kind="${kind}" data-cid="${esc(r.cattleId)}" data-id="${esc(r.id)}">Edit</button><button class="btn danger small" data-rec="delete" data-kind="${kind}" data-id="${esc(r.id)}">Delete</button></div></div>`).join(""):'<div class="empty">No records.</div>'}`
 }
 
-$("animalBody").addEventListener("click",e=>{
- const open=e.target.closest("[data-open-record]");if(open)return recordPage(open.dataset.openRecord,open.dataset.id);
- const add=e.target.closest("[data-add-photos]");if(add)return addAnimalPhotos(add.dataset.addPhotos);
- const del=e.target.closest("[data-photo-delete]");if(del){const c=data.cattle.find(x=>x.id===del.dataset.id);c.photos.splice(Number(del.dataset.photoDelete),1);persist();showAnimal(c.id)}
-});
-function primaryPhoto(id){openModal(`<h2>Primary Picture — Animal ID: ${esc(id)}</h2><input id="primaryFile" type="file" accept="image/*"><div class="actions"><button class="btn" id="savePrimary">Save Picture</button><button class="btn secondary" id="cancelPrimary">Cancel</button></div>`);$("cancelPrimary").onclick=closeModal;$("savePrimary").onclick=async()=>{const f=$("primaryFile").files[0];if(!f)return alert("Choose a picture");const img=await readImage(f);const c=data.cattle.find(x=>x.id===id);c.photo=img;if(!c.photos.includes(img))c.photos.unshift(img);closeModal();persist();showAnimal(id);toast("Picture attached to Animal ID")}}
-function addAnimalPhotos(id){openModal(`<h2>Add Photos — Animal ID: ${esc(id)}</h2><input id="multiFiles" type="file" accept="image/*" multiple><div class="actions"><button class="btn" id="saveMulti">Attach Photos</button><button class="btn secondary" id="cancelMulti">Cancel</button></div>`);$("cancelMulti").onclick=closeModal;$("saveMulti").onclick=async()=>{const files=[...$("multiFiles").files];if(!files.length)return alert("Choose at least one picture");const c=data.cattle.find(x=>x.id===id);for(const f of files){try{const img=await readImage(f);c.photos.push(img);if(!c.photo)c.photo=img}catch(e){}}closeModal();persist();showAnimal(id);toast(files.length+" photo(s) attached")}}
-function animalPhotos(id){showAnimal(id)}
-
-function recordPage(k,cid){show("records");const names={breeding:"Breeding",calving:"Calves / Calving",lactation:"Lactation",health:"Health",semen:"Semen",pedigree:"Pedigree"};const rows=data[k].filter(r=>!cid||r.cattleId===cid);$("recordList").innerHTML=`<div class="title"><h3>${names[k]}</h3><button class="btn small" data-record-action="add" data-kind="${k}" data-id="${esc(cid)}">＋ Add</button></div>${rows.length?rows.map(r=>`<div class="card" style="margin-bottom:9px"><b>${esc(r.title||"Record")}</b><div class="muted">Animal ID: ${esc(r.cattleId)}<br>${esc(r.details)}</div><div class="actions"><button class="btn secondary small" data-record-action="edit" data-kind="${k}" data-cattle="${esc(r.cattleId)}" data-id="${esc(r.id)}">Edit</button><button class="btn danger small" data-record-action="delete" data-kind="${k}" data-id="${esc(r.id)}">Delete</button></div></div>`).join(""):'<div class="empty">No records.</div>'}`;
+function recordForm(k,cid="",rid=""){let r=D[k].find(x=>x.id===rid)||{};let f="";
+if(k==="breeding")f=`<div class="row"><label>Heat Date<input id="a" type="date" value="${esc(r.heat||"")}"></label><label>AI / Service Date<input id="b" type="date" value="${esc(r.service||"")}"></label></div><div class="row"><label>Service Type<select id="c"><option>AI</option><option>Natural Service</option><option>ET</option></select></label><label>Bull ID<input id="d" value="${esc(r.bull||"")}"></label></div><div class="row"><label>Semen Straw / Bull Code<input id="e" value="${esc(r.straw||"")}"></label><label>AI Centre / Technician<input id="f" value="${esc(r.tech||"")}"></label></div><div class="row"><label>PD Date<input id="g" type="date" value="${esc(r.pdDate||"")}"></label><label>PD Result<select id="h"><option>Not Checked</option><option>Positive</option><option>Negative</option></select></label></div><div class="row"><label>Expected Calving<input id="i" type="date" value="${esc(r.expected||"")}"></label><label>Actual Calving<input id="j" type="date" value="${esc(r.actual||"")}"></label></div><label>Notes<textarea id="k">${esc(r.notes||"")}</textarea></label>`;
+else if(k==="calves")f=`<div class="row"><label>Calf ID *<input id="a" value="${esc(r.calfId||"")}"></label><label>Birth Date<input id="b" type="date" value="${esc(r.birth||"")}"></label></div><div class="row"><label>Sex<select id="c"><option>Female</option><option>Male</option></select></label><label>Birth Weight kg<input id="d" type="number" step=".1" value="${esc(r.weight||"")}"></label></div><div class="row"><label>Mother ID<input id="e" value="${esc(r.mother||cid)}"></label><label>Father/Bull ID<input id="f" value="${esc(r.father||"")}"></label></div><div class="row"><label>Calf Status<select id="g"><option>Healthy</option><option>Under Treatment</option><option>Weak</option><option>Dead</option><option>Sold</option></select></label><label>Initial Colostrum<input id="h" value="${esc(r.colostrum||"")}"></label></div><label>Feeding / Notes<textarea id="i">${esc(r.notes||"")}</textarea></label>`;
+else if(k==="health")f=`<div class="row"><label>Visit Date<input id="a" type="date" value="${esc(r.date||"")}"></label><label>Type<select id="b"><option>General Check</option><option>Vaccination</option><option>Deworming</option><option>Disease / Treatment</option><option>Injury</option><option>Reproductive</option></select></label></div><div class="row"><label>Temperature °C<input id="c" type="number" step=".1" value="${esc(r.temp||"")}"></label><label>Weight kg<input id="d" type="number" step=".1" value="${esc(r.weight||"")}"></label></div><label>Symptoms<textarea id="e">${esc(r.symptoms||"")}</textarea></label><label>Diagnosis<textarea id="f">${esc(r.diagnosis||"")}</textarea></label><div class="row"><label>Medicine / Vaccine<input id="g" value="${esc(r.medicine||"")}"></label><label>Dose / Route<input id="h" value="${esc(r.dose||"")}"></label></div><div class="row"><label>Vet / Person<input id="i" value="${esc(r.vet||"")}"></label><label>Follow-up Date<input id="j" type="date" value="${esc(r.follow||"")}"></label></div><label>Notes<textarea id="k">${esc(r.notes||"")}</textarea></label>`;
+else f=`<div class="row"><label>Date<input id="a" type="date" value="${esc(r.date||"")}"></label><label>Lactation No.<input id="b" value="${esc(r.lact||"")}"></label></div><div class="row"><label>Milk L/day<input id="c" type="number" step=".1" value="${esc(r.milk||"")}"></label><label>Fat %<input id="d" value="${esc(r.fat||"")}"></label></div><label>Notes<textarea id="e">${esc(r.notes||"")}</textarea></label>`;
+modal(`<h2>${rid?"Edit":"Add"} ${k==="breeding"?"Breeding Record":k==="calves"?"Calf Record":k==="health"?"Health Record":"Lactation Record"}</h2><label>Animal ID *<input id="animalId" value="${esc(r.cattleId||cid)}"></label>${f}<div class="actions"><button class="btn" id="saveR">💾 Save</button><button class="btn secondary" id="cancelR">Cancel</button>${rid?'<button class="btn danger" id="delR">Delete</button>':""}</div>`);
+$("cancelR").onclick=close;$("saveR").onclick=()=>saveRecord(k,rid);if(rid)$("delR").onclick=()=>{close();deleteRecord(k,rid)}
 }
-function recordForm(k,cid,id){
- const r=data[k].find(x=>x.id===id)||{};
- openModal(`<h2>${id?"Edit":"Add"} Record</h2><label>Animal ID *<input id="r_cattle" value="${esc(r.cattleId||cid)}"></label><label>Title / Date<input id="r_title" value="${esc(r.title||"")}"></label><label>Details<textarea id="r_details">${esc(r.details||"")}</textarea></label><div class="actions"><button class="btn" id="saveRecord">💾 Save</button><button class="btn secondary" id="cancelRecord">Cancel</button>${id?'<button class="btn danger" id="deleteRecord">Delete</button>':""}</div>`);
- $("cancelRecord").onclick=closeModal;$("saveRecord").onclick=()=>saveRecord(k,id);if(id)$("deleteRecord").onclick=()=>{closeModal();deleteRecord(k,id)};
-}
-function saveRecord(k,id){const cid=$("r_cattle").value.trim();if(!data.cattle.some(c=>c.id===cid))return alert("Animal ID not found");const r={id:id||String(Date.now())+"_"+Math.random().toString(36).slice(2),cattleId:cid,title:$("r_title").value.trim(),details:$("r_details").value};const i=data[k].findIndex(x=>x.id===id);if(i>=0)data[k][i]=r;else data[k].push(r);closeModal();persist();recordPage(k,cid);toast("Record saved")}
-function deleteRecord(k,id){if(confirm("Delete this record?")){data[k]=data[k].filter(r=>r.id!==id);persist();recordPage(k,"");toast("Record deleted")}}
+function saveRecord(k,rid){let aid=$("animalId").value.trim();if(!aid||!D.cattle.some(c=>c.id===aid))return alert("Animal ID must match an existing cattle record");
+let r={id:rid||Date.now()+"_"+Math.random().toString(36).slice(2),cattleId:aid,title:"",details:""};
+if(k==="breeding"){Object.assign(r,{heat:$("a").value,service:$("b").value,type:$("c").value,bull:$("d").value,straw:$("e").value,tech:$("f").value,pdDate:$("g").value,pd:$("h").value,expected:$("i").value,actual:$("j").value,notes:$("k").value,title:"Breeding • "+$("b").value,details:`Heat: ${$("a").value||"-"}\nAI/Service: ${$("b").value||"-"} • ${$("c").value}\nBull ID: ${$("d").value||"-"} • Straw: ${$("e").value||"-"}\nAI Centre/Technician: ${$("f").value||"-"}\nPD: ${$("h").value} • ${$("g").value||"-"}\nExpected Calving: ${$("i").value||"-"}\nActual Calving: ${$("j").value||"-"}\nNotes: ${$("k").value||"-"}`})}
+if(k==="calves"){Object.assign(r,{calfId:$("a").value.trim(),birth:$("b").value,sex:$("c").value,weight:$("d").value,mother:$("e").value,father:$("f").value,status:$("g").value,colostrum:$("h").value,notes:$("i").value,title:"Calf "+$("a").value,details:`Birth: ${$("b").value||"-"} • ${$("c").value}\nBirth Weight: ${$("d").value||"-"} kg\nMother: ${$("e").value||"-"} • Father/Bull: ${$("f").value||"-"}\nStatus: ${$("g").value} • Colostrum: ${$("h").value||"-"}\nFeeding/Notes: ${$("i").value||"-"}`})}
+if(k==="health"){Object.assign(r,{date:$("a").value,type:$("b").value,temp:$("c").value,weight:$("d").value,symptoms:$("e").value,diagnosis:$("f").value,medicine:$("g").value,dose:$("h").value,vet:$("i").value,follow:$("j").value,notes:$("k").value,title:$("a").value+" • "+$("b").value,details:`Date: ${$("a").value||"-"} • ${$("b").value}\nTemp: ${$("c").value||"-"} °C • Weight: ${$("d").value||"-"} kg\nSymptoms: ${$("e").value||"-"}\nDiagnosis: ${$("f").value||"-"}\nMedicine/Vaccine: ${$("g").value||"-"} • Dose/Route: ${$("h").value||"-"}\nVet/Person: ${$("i").value||"-"} • Follow-up: ${$("j").value||"-"}\nNotes: ${$("k").value||"-"}`})}
+if(k==="lactation"){Object.assign(r,{date:$("a").value,lact:$("b").value,milk:$("c").value,fat:$("d").value,notes:$("e").value,title:$("a").value+" • Lactation "+$("b").value,details:`Date: ${$("a").value||"-"} • Lactation: ${$("b").value||"-"}\nMilk: ${$("c").value||"-"} L/day • Fat: ${$("d").value||"-"}%\nNotes: ${$("e").value||"-"}`})}
+let i=D[k].findIndex(x=>x.id===rid);if(i>=0)D[k][i]=r;else D[k].push(r);close();save();recordPage(k,aid);toast("Record saved")}
+function deleteRecord(k,id){if(!confirm("Delete this record?"))return;D[k]=D[k].filter(x=>x.id!==id);save();recordPage(k,"");toast("Record deleted")}
 
-function homePhotos(){openModal(`<h2>Home Page Cow Photos</h2><p class="muted">These photos appear in the Home slider. For a specific cow, use the cow's own Photo button so its Animal ID is shown.</p><input id="homeFiles" type="file" accept="image/*" multiple><div class="actions"><button class="btn" id="saveHomePhotos">Add Photos</button><button class="btn secondary" id="cancelHome">Cancel</button></div><div class="photo-grid" style="margin-top:10px">${data.homePhotos.map((p,i)=>`<div><img src="${p}"><button class="btn danger small" data-home-delete="${i}">Delete</button></div>`).join("")}</div>`);
- $("cancelHome").onclick=closeModal;$("saveHomePhotos").onclick=async()=>{const files=[...$("homeFiles").files];for(const f of files){try{data.homePhotos.push(await readImage(f))}catch(e){}}closeModal();persist();toast(files.length+" home photo(s) added")};
-}
-$("sheet").addEventListener("click",e=>{const b=e.target.closest("[data-home-delete]");if(b){data.homePhotos.splice(Number(b.dataset.homeDelete),1);persist();homePhotos()}});
-
-function profileForm(){openModal(`<h2>Profile & Logo</h2><label>My Profile Picture<input id="profileFile" type="file" accept="image/*"></label><label>App Logo<input id="logoFile" type="file" accept="image/*"></label><div class="actions"><button class="btn" id="saveProfile">Save</button><button class="btn secondary" id="cancelProfile">Cancel</button></div>`);$("cancelProfile").onclick=closeModal;$("saveProfile").onclick=async()=>{if($("profileFile").files[0])data.profile=await readImage($("profileFile").files[0]);if($("logoFile").files[0])data.logo=await readImage($("logoFile").files[0]);closeModal();persist();toast("Profile saved")}}
-function backup(){const blob=new Blob([JSON.stringify(data)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="Punganur_Cattles_Backup.json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
-function placeholder(){return "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><rect width="100%" height="100%" fill="#e7eee7"/><text x="50%" y="58%" text-anchor="middle" font-size="55">🐄</text></svg>')}
-let slide=0,slideTimer;
-function refreshSlider(){const items=[];data.cattle.forEach(c=>{if(c.photo)items.push({p:c.photo,cap:(c.name||"Punganur Cattle")+" • ID: "+c.id});(c.photos||[]).forEach(p=>items.push({p,cap:(c.name||"Punganur Cattle")+" • ID: "+c.id}))});data.homePhotos.forEach(p=>items.push({p,cap:"Punganur Cattles"}));if(!items.length)items.push({p:placeholder(),cap:"Add your Punganur cattle pictures"});$("slides").innerHTML=items.map(x=>`<div class="slide"><img src="${x.p}"><div class="cap">${esc(x.cap)}</div></div>`).join("");slide=0;$("slides").style.transform="translateX(0)";clearInterval(slideTimer);if(items.length>1)slideTimer=setInterval(()=>{slide=(slide+1)%items.length;$("slides").style.transform=`translateX(-${slide*100}%)`},3500)}
-function refresh(){ $("profile").innerHTML=data.profile?`<img src="${data.profile}">`:"👤";$("logo").innerHTML=data.logo?`<img src="${data.logo}">`:"🐄";$("countCattle").textContent=data.cattle.length;$("countBreeding").textContent=data.breeding.length;$("countCalving").textContent=data.calving.length;$("countLactation").textContent=data.lactation.length;refreshSlider();renderCattle()}
+function profileForm(){modal(`<h2>Profile & Logo</h2><label>Profile Picture<input id="pr" type="file" accept="image/*"></label><label>App Logo<input id="lg" type="file" accept="image/*"></label><div class="actions"><button class="btn" id="saveP">Save</button><button class="btn secondary" id="closeP">Cancel</button></div>`);$("closeP").onclick=close;$("saveP").onclick=async()=>{if($("pr").files[0])D.profile=await image($("pr").files[0]);if($("lg").files[0])D.logo=await image($("lg").files[0]);close();save();toast("Profile saved")}}
+function homePhotos(){modal(`<h2>Home Slider Photos</h2><input id="hf" type="file" accept="image/*" multiple><div class="actions"><button class="btn" id="addH">Add Photos</button><button class="btn secondary" id="closeH">Close</button></div>`);$("closeH").onclick=close;$("addH").onclick=async()=>{for(const f of $("hf").files)D.homePhotos.push(await image(f));close();save();toast("Slider photos added")}}
+function backup(){let a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(D)],{type:"application/json"}));a.download="Punganur_Cattles_V4_Backup.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+let timer,idx=0;function slider(){let x=[];D.cattle.forEach(c=>{if(c.photo)x.push({p:c.photo,t:(c.name||"Cattle")+" • ID: "+c.id})});D.homePhotos.forEach(p=>x.push({p,t:"Punganur Cattles"}));if(!x.length)x=[{p:placeholder(),t:"Add cattle pictures"}];$("slides").innerHTML=x.map(s=>`<div class="slide"><img src="${s.p}"><div class="cap">${esc(s.t)}</div></div>`).join("");clearInterval(timer);idx=0;if(x.length>1)timer=setInterval(()=>{idx=(idx+1)%x.length;$("slides").style.transform=`translateX(-${idx*100}%)`},3500)}
+function refresh(){$("nC").textContent=D.cattle.length;$("nB").textContent=D.breeding.length;$("nK").textContent=D.calves.length;$("nH").textContent=D.health.length;$("profile").innerHTML=D.profile?`<img src="${D.profile}">`:"👤";$("logo").innerHTML=D.logo?`<img src="${D.logo}">`:"🐄";slider();renderCattle()}
 refresh();
 })();
 </script>
-</body>
-</html>
+</body></html>

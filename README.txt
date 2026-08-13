@@ -1,21 +1,10 @@
-Punganur Cattles V2 Reliable
-
-This version uses explicit event listeners instead of inline button handlers.
-Features:
-- V1-style GUI
-- Working Home/Cattle/Records/More navigation
-- Add/Edit/Delete cattle
-- Duplicate Animal ID prevention
-- Primary cow picture linked to Animal ID
-- Multiple photos linked to each Animal ID
-- Home slider using individual cow photos + home photos
-- Profile picture and logo
-- Breeding, calving, lactation, health, semen and pedigree records
-- Edit/Delete for records
+Punganur Cattles V4
+- Proper Animal ID based records
+- Detailed breeding: heat, AI/service, bull ID, straw/code, technician, PD, expected/actual calving
+- Detailed calf records: calf ID, birth, sex, weight, mother/father, status, colostrum, notes
+- Detailed health records: visit, vaccination/deworming/treatment, temperature, weight, symptoms, diagnosis, medicine, dose, vet, follow-up
+- Individual animal page: breeding, calves, health and lactation records together
+- Add/Edit/Save/Delete on every module
+- Duplicate Animal IDs blocked
+- Individual cattle photos + home slider
 - Backup/Restore
-
-INSTALL:
-1. Extract the ZIP.
-2. Open index.html in Chrome.
-3. For Android "Install app", host the folder on HTTPS (or use a local web server).
-4. Do not edit or open the ZIP itself.
