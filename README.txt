@@ -1,10 +1,12 @@
-Punganur Cattles V4
-- Proper Animal ID based records
-- Detailed breeding: heat, AI/service, bull ID, straw/code, technician, PD, expected/actual calving
-- Detailed calf records: calf ID, birth, sex, weight, mother/father, status, colostrum, notes
-- Detailed health records: visit, vaccination/deworming/treatment, temperature, weight, symptoms, diagnosis, medicine, dose, vet, follow-up
-- Individual animal page: breeding, calves, health and lactation records together
-- Add/Edit/Save/Delete on every module
-- Duplicate Animal IDs blocked
-- Individual cattle photos + home slider
-- Backup/Restore
+PUNGANUR CATTLES — FULL FARM MANAGEMENT APP
+
+Open index.html on an Android phone in a browser.
+
+Modules:
+Cattle Master; Breeding & AI; Pregnancy; Calves; Health & Veterinary;
+Vaccination; Deworming; Weight & Growth; Lactation; Pedigree;
+Expenses; Notes; Reports; Photo Slider; Profile/Logo; Backup/Restore.
+
+Every record is linked to an Animal ID. Add/Edit/Delete/Save controls are included.
+Duplicate Animal IDs are blocked.
+Data is stored locally on the device/browser; use Backup regularly.
