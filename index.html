@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Punganur Cattles - Farm Management</title>
+<title>Punganur Cattles V12 Advanced</title>
 <style>
 :root{--g:#275b32;--g2:#4e8658;--bg:#f4f7f3;--card:#fff;--line:#dbe5dc;--txt:#203027;--muted:#6d786f;--red:#b3261e}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:Arial,sans-serif}.app{max-width:1050px;margin:auto;padding-bottom:82px}
@@ -122,10 +122,17 @@ function commonFields(k,r){
 }
 function recordForm(k,cid="",rid=""){
  const r=D[k].find(x=>x.id===rid)||{};
- modal(`<h2>${rid?"Edit":"Add"} ${labels[k]}</h2><label>Animal ID *<input id="aid" value="${esc(r.cattleId||cid)}"></label>${commonFields(k,r)}<div class="actions"><button class="btn" id="saveR">💾 Save</button><button class="btn secondary" id="cancelR">Cancel</button>${rid?'<button class="btn danger" id="deleteR">Delete</button>':""}</div>`);
+ modal(`<h2>${rid?"Edit":"Add"} ${labels[k]}</h2><label>Animal ID *<select id="aid"><option value="">Select Animal ID</option>${D.cattle.map(c=>`<option value="${esc(c.id)}">${esc(c.id)} — ${esc(c.name||"Unnamed")} (${esc(c.sex||"")})</option>`).join("")}</select></label>${commonFields(k,r)}<div class="actions"><button class="btn" id="saveR">💾 Save</button><button class="btn secondary" id="cancelR">Cancel</button>${rid?'<button class="btn danger" id="deleteR">Delete</button>':""}</div>`);
  $("cancelR").onclick=close;
  $("saveR").onclick=()=>saveRecord(k,rid);
  if(rid)$("deleteR").onclick=()=>{close();deleteRecord(k,rid)}
+}
+function registerDeliveredCalfFromRecord(r){
+ const calfId=(r.calfId||"").trim();
+ if(!calfId || D.cattle.some(c=>c.id===calfId)) return;
+ const mother=D.cattle.find(c=>c.id===r.mother);
+ D.cattle.push({id:calfId,name:calfId,sex:r.sex||"Calf",breed:mother?.breed||"Punganur",dob:r.birth||"",mother:r.mother||"",father:r.father||"",marks:"",notes:"Automatically created from delivery record.",photo:"",photos:[]});
+ if(!D.pedigree.some(x=>x.cattleId===calfId)) D.pedigree.push({id:"auto_pedigree_"+calfId,cattleId:calfId,title:"Pedigree",mother:r.mother||"",father:r.father||"",mgf:"",mgm:"",pgf:"",pgm:"",notes:"Automatically linked from delivery record.",details:`Mother: ${r.mother||"-"} • Father: ${r.father||"-"}`});
 }
 function saveRecord(k,rid){
  const aid=$("aid").value.trim();if(!aid||!D.cattle.some(c=>c.id===aid))return alert("Animal ID must exist in Cattle Register.");

@@ -1,12 +1,3 @@
-PUNGANUR CATTLES — FULL FARM MANAGEMENT APP
+Punganur Cattles V12 Advanced
 
-Open index.html on an Android phone in a browser.
-
-Modules:
-Cattle Master; Breeding & AI; Pregnancy; Calves; Health & Veterinary;
-Vaccination; Deworming; Weight & Growth; Lactation; Pedigree;
-Expenses; Notes; Reports; Photo Slider; Profile/Logo; Backup/Restore.
-
-Every record is linked to an Animal ID. Add/Edit/Delete/Save controls are included.
-Duplicate Animal IDs are blocked.
-Data is stored locally on the device/browser; use Backup regularly.
+Automatic Animal ID dropdowns. Delivered calf can automatically create the calf in the main cattle list and pedigree, linked to mother and father.
